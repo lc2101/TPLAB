@@ -1,11 +1,12 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingComponent } from './landing/landing/landing.component';
+import { LandingComponent } from './modules/landing/landing/landing.component';
 
 const routes: Routes = [
-  {path:'',
+  {
+    path:'',
   component:LandingComponent,
-  loadChildren: () => import("./landing/landing.module").then(n=>n.LandingModule)
+  loadChildren: () => import("./modules/landing/landing.module").then(n=>n.LandingModule)
   }
 ];
 
