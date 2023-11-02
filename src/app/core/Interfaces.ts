@@ -23,4 +23,5 @@ export interface IEvent {
   description: string | null;
   category: string | null;
   image: string | null;
+  tickets: number | null;
 }
