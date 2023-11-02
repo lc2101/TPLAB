@@ -4,9 +4,13 @@ import { LandingComponent } from './modules/landing/landing/landing.component';
 
 const routes: Routes = [
   {
+    path: 'auth',
+    loadChildren: () => import("./modules/auth/auth.module").then(m => m.AuthModule)
+  },
+  {
     path:'',
-  component:LandingComponent,
-  loadChildren: () => import("./modules/landing/landing.module").then(n=>n.LandingModule)
+    component:LandingComponent,
+    loadChildren: () => import("./modules/landing/landing.module").then(n=>n.LandingModule)
   }
 ];
 
