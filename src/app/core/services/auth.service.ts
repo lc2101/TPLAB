@@ -7,17 +7,12 @@ import { User } from '../Models';
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   private user: User | null | undefined = null;
 
   constructor(private apiService: ApiService) { }
 
-  get currentUser(): User | undefined {
-    if (!this.user) return undefined;
-    return structuredClone(this.user);
-  }
-
-  public async login(email: string, password: string): Promise<boolean> {
+  public async checkLogin(email: string, password: string): Promise<boolean> {
 
     let isLogin = false;
 
@@ -25,12 +20,12 @@ export class AuthService {
 
       let apiResponse = this.apiService.getToAuth(email, password);
 
-      let userResponse = await lastValueFrom(apiResponse);
+      let userRespone = await lastValueFrom(apiResponse);
 
-      this.user = userResponse[0];
+      this.user = userRespone[0];
 
       if (this.user) {
-        localStorage.setItem('token', this.user.id!.toString());
+        //localStorage.setItem('token', this.user.id!.toString());
         isLogin = true;
       }
     } catch (error) {
@@ -38,5 +33,43 @@ export class AuthService {
     }
 
     return isLogin;
+  }
+
+  public checkUserByEmail(email: string): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.apiService.checkUserByUsername(email).subscribe({
+        next: data => resolve(data),
+        error: error => reject(error)
+      })
+    });
+  }
+  
+  public checkUserByDni(dni: string): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.apiService.checkUserByUsername(dni).subscribe({
+        next: data => resolve(data),
+        error: error => reject(error)
+      })
+    });
+  }
+  
+  public checkUserByUsername(userName: string): Promise<boolean> {
+    
+    return new Promise<boolean>((resolve, reject) => {
+      this.apiService.checkUserByUsername(userName).subscribe({
+        next: data => resolve(data),
+        error: error => reject(error)
+      })
+    }); 
+   }
+  
+  public createUser(user: User): Promise<User> {
+    
+    return new Promise<User>((resolve, reject) => {
+      this.apiService.createUser(user).subscribe({
+        next: data => resolve(data),
+        error: error => reject(error)
+      })
+    });
   }
 }

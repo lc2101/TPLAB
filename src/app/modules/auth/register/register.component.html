@@ -1,7 +1,7 @@
 <div>
-    <h2>Iniciar Sesión</h2>
+    <h2>Registro</h2>
 
-    <form autocomplete="off">
+    <form autocomplete="off" [formGroup]="registerForm" (ngSubmit)="userRegister()">
         <div>
         
             <label for="name">Nombre: </label>
@@ -9,8 +9,8 @@
             <input type="text" formControlName="name" placeholder="Ingrese su/s nombre/s"/>
             <div>
                 
-                <span  *ngIf="!isValidField('name')">
-                    {{ getFieldError('name') }}
+                <span  *ngIf="isValidField('name')">
+                    {{ getFieldError('name', 'nombre') }}
                 </span>
 
             </div>
@@ -27,8 +27,8 @@
             
             <div>
             
-                <span *ngIf="!isValidField('name')">
-                    {{ getFieldError('name') }}
+                <span *ngIf="isValidField('lastName')">
+                    {{ getFieldError('lastName', 'apellido') }}
                 </span>
             
             </div>
@@ -43,8 +43,8 @@
             
             <div>
             
-                <span *ngIf="!isValidField('name')">
-                    {{ getFieldError('name') }}
+                <span *ngIf="isValidField('dni')">
+                    {{ getFieldError('dni', 'documento') }}
                 </span>
             
             </div>
@@ -56,6 +56,14 @@
             <label for="birthDate">Fecha de Nacimiento: </label>
         
             <input type="date" formControlName="birthDate"/>
+
+            <div>
+            
+                <span *ngIf="isValidField('birthDate')">
+                    {{ getFieldError('birthDate', 'Fecha de nacimiento') }}
+                </span>
+            
+            </div>
         
         </div>
 
@@ -67,8 +75,8 @@
             
             <div>
             
-                <span *ngIf="!isValidField('name')">
-                    {{ getFieldError('name') }}
+                <span *ngIf="isValidField('userName')">
+                    {{ getFieldError('userName', 'nombre de usuario') }}
                 </span>
             
             </div>
@@ -83,8 +91,8 @@
             
             <div>
             
-                <span *ngIf="!isValidField('name')">
-                    {{ getFieldError('name') }}
+                <span *ngIf="isValidField('email')">
+                    {{ getFieldError('email', 'email') }}
                 </span>
             
             </div>
@@ -99,8 +107,8 @@
 
             <div>
             
-                <span *ngIf="!isValidField('name')">
-                    {{ getFieldError('name') }}
+                <span *ngIf="isValidField('password')">
+                    {{ getFieldError('password', 'contraseña') }}
                 </span>
             
             </div>
@@ -111,15 +119,4 @@
     </form>
 </div>
 
-{{name.errors}}
-
-id: number | null;
-userName: string | null;
-email: string | null;
-password: string | null;
-age: string | null;
-dni: string | null;
-birthDate: Date | null;
-name: string | null;
-lastName: string | null;
-suscription: string | null;
+{{this.user!.name}}
