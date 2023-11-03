@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { User } from 'src/app/core/Models';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -11,35 +10,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class RegisterComponent {
 
-  get email() {
-    return this.registerForm.get('email') as FormControl;
-  }
-
-  get password() {
-    return this.registerForm.get('password') as FormControl;
-  }
-
-  get name() {
-    return this.registerForm.get('name') as FormControl;
-  }
-
-  get lastName() {
-    return this.registerForm.get('lastName') as FormControl;
-  }
-
-  get birthDate() {
-    return this.registerForm.get('birthDate') as FormControl;
-  }
-
-  get userName() {
-    return this.registerForm.get('userName') as FormControl;
-  }
-
-  get dni() {
-    return this.registerForm.get('dni') as FormControl;
-  }
-
-  public user: User | null = null;
+  public user: User = new User({ id : null, birthDate: null});
 
   private dniPattern: RegExp = /^\d+$/; // solo permite numeros
 
@@ -56,70 +27,110 @@ export class RegisterComponent {
     userName: new FormControl('', [Validators.required, Validators.minLength(6)]),
     dni: new FormControl('',[Validators.required, Validators.pattern(this.dniPattern)]),
     email: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-    password: new FormControl('', [Validators.required, Validators.pattern(this.passwordPattern)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(this.passwordPattern)]),
   })
 
-  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit() {
 
 
   }
 
+  public userRegister() {
+    this.user!.name = this.registerForm.value.name;
+    this.user!.lastName = this.registerForm.value.lastName;
+    this.user!.birthDate = this.registerForm.value.birthDate;
+    this.user!.dni = this.registerForm.value.dni;
+    this.user!.userName = this.registerForm.value.userName;
+    this.user!.email = this.registerForm.value.email;
+    this.user!.password = this.registerForm.value.password;
+
+    /*this.authService.createUser(this.user!)
+      .then((resp: any) => alert("Usuario registrado exitosamente"))
+      .catch((error: any) => alert("No se pudo registrar el usuario"));*/
+
+    this.authService.checkUserByDni(this.user!.dni).then(() => {
+      this.authService.checkUserByEmail(this.user!.email).then(() => {
+        this.authService.checkUserByUsername(this.user!.userName).then(() => {
+          this.authService.createUser(this.user!)
+            .then(() => alert("Usuario registrado exitosamente"))
+            .catch(() => alert("No se pudo registrar el usuario"));
+        }).catch(() => alert("El nombre de usuario ya existe"));
+      }).catch(() => alert("El email ya existe"));
+    }).catch(() => alert("El dni ya existe"));
+    
+  }
   
   isValidField(field: string): boolean | null {
     return this.registerForm.controls[field].errors && this.registerForm.controls[field].touched;
   }
 
-  
-  getFieldError(field: string): string | null {
+  getFieldError(field: string, fieldType: string): string {
 
-    if (!this.registerForm.controls[field]) return null;
+    const errors = this.registerForm.get(field)!.errors || {};
 
-    const errors = this.registerForm.controls[field] || {};
-
-    for (const key of Object.keys(errors)) {
-      switch (key) {
-        case 'required':
-          return "Este campo es requerido.";
-        case 'pattern':
-          return `Mínimo ${errors['minlength'].requiredLength} caracteres.`;
-        
-      }
+    switch (fieldType) {
+      case 'email':
+        switch (Object.keys(errors)[0]) {
+          case 'required':
+            return `${fieldType} requerido.`;
+          case 'pattern':
+            return `${fieldType} inválido.`;
+        }
+        break;
+      case 'contraseña':
+        switch (Object.keys(errors)[0]) {
+          case 'required':
+            return `${fieldType} requerida.`;
+          case 'pattern':
+            return `${fieldType} inválida. Debe contener al menos 6 caracteres, incluyendo una letra minuscula, una mayuscula y un numero.`;
+          case 'minlength':
+            return `${fieldType} inválida. Debe contener al menos 6 caracteres, incluyendo una letra minuscula, una mayuscula y un numero.`;
+        }
+        break;
+      case 'nombre':
+        switch (Object.keys(errors)[0]) {
+          case 'required':
+            return `${fieldType} requerido.`;
+          case 'pattern':
+            return `${fieldType} inválido.`;
+        }
+        break;
+      case 'apellido':
+        switch (Object.keys(errors)[0]) {
+          case 'required':
+            return `${fieldType} requerido.`;
+          case 'pattern':
+            return `${fieldType} inválido.`;
+        }
+        break;
+      case 'nombre de usuario':
+        switch (Object.keys(errors)[0]) {
+          case 'required':
+            return `${fieldType} requerido.`;
+          case 'minlength':
+            return `${fieldType} inválido. Debe contener al menos 6 caracteres`;
+        }
+        break;
+      case 'documento':
+        switch (Object.keys(errors)[0]) {
+          case 'required':
+            return `${fieldType} requerido.`;
+          case 'pattern':
+            return `${fieldType} inválido.`;
+        }
+        break;
+      case 'Fecha de nacimiento':
+        switch (Object.keys(errors)[0]) {
+          case 'required':
+            return `${fieldType} requerida.`;
+        }
+        break;
     }
 
-    return null;
+    return '';
   }
 
-  /*
-
-  async onSubmit() {
-
-    if (this.loginForm.valid) {
-      // lógica para verificar las credenciales de inicio de sesión
-      console.log('Formulario válido. Usuario: ', this.loginForm.value.email);
-    } else {
-      // El formulario no es válido, muestra un mensaje de error si es necesario.
-      console.log('Formulario no válido');
-    }
-
-    try {
-
-      let isLogin: boolean = await this.authService.login(this.loginForm.value.email, this.loginForm.value.password);
-
-      if (isLogin) {
-        this.router.navigate(["/main"]);
-      }
-      else {
-
-        this.email = this.loginForm.value.email;
-
-        this.loginForm.reset({ email: this.email });
-      }
-
-    } catch (error) {
-      console.log(error);
-    }
-
-  }*/
+  
 }
