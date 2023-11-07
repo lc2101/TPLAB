@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../Models';
-import { Observable } from 'rxjs';
+import { User, Event } from '../Models';
+import { Observable, catchError, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  //! Users
   public getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseURL}/users`);
   }
@@ -33,5 +34,30 @@ export class ApiService {
 
   public checkUserByUsername(userName: string): Observable<User[]>{
     return this.http.get<User[]>(`${this.baseURL}/users?userName=${userName}`);
+  }
+
+  //! Events
+  getEvents(): Observable<Event[]> {
+    return this.http.get<Event[]>(`${this.baseURL}/events`);
+  }
+
+  getEventByName(name: string): Observable<Event[]>{
+    return this.http.get<Event[]>(`${this.baseURL}/events?name=${name}`);
+  }
+
+  addEvent(createPerson: Event): Observable<boolean> {
+    return this.http.post<boolean>(`${this.baseURL}/events`, createPerson);
+  }
+
+  deleteEvent(id: number): Observable<boolean> {
+    return this.http.delete(`${this.baseURL}/events/${id}`).
+      pipe(
+        map(resp => true),
+        catchError(error => of(false))
+      );
+  }
+
+  editEvent(id: number, updateEvent: Event): Observable<boolean> {
+    return this.http.put<boolean>(`${this.baseURL}/events/${id}`, updateEvent);
   }
 }

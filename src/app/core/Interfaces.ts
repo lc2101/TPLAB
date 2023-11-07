@@ -1,27 +1,28 @@
 export interface IUser {
-  id: number | null;
-  userName: string | null;
-  email: string | null;
-  password: string | null;
-  age: string | null;
-  dni: string | null;
-  birthDate: Date | null;
-  name: string | null;
-  lastName: string | null;
-  suscription: string | null;
+  "id": number | null;
+  "userName": string;
+  "email": string;
+  "password": string;
+  "age": string;
+  "dni": string;
+  "birthDate": Date | null;
+  "name": string;
+  "lastName": string;
+  "suscription": string;
 }
 
-export interface ITickets {
-  id: number | null;
-  idUser: number | null;
-  idEvent: number | null;
+export interface ITicket {
+  "id": number | null;
+  "idUser": number | null;
+  "idEvent": number | null;
 }
 
 export interface IEvent {
-  id: number | null;
-  date: Date | null;
-  description: string | null;
-  category: string | null;
-  image: string | null;
-  tickets: number | null;
+  "id": number | null;
+  "name": string;
+  "date": Date | null;
+  "description": string;
+  "category": string;
+  "image": string;
+  "tickets": number | null;
 }

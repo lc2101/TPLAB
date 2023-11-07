@@ -46,10 +46,6 @@ export class RegisterComponent {
     this.user!.email = this.registerForm.value.email;
     this.user!.password = this.registerForm.value.password;
 
-    /*this.authService.createUser(this.user!)
-      .then((resp: any) => alert("Usuario registrado exitosamente"))
-      .catch((error: any) => alert("No se pudo registrar el usuario"));*/
-
     let checkDNI = await this.authService.checkUserByDni(this.user.dni!);
     let checkEmail = await this.authService.checkUserByEmail(this.user.email!);
     let checkUsername = await this.authService.checkUserByUsername(this.user.userName!);

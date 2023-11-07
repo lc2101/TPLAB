@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddEventComponent } from './add-event/add-event.component';
 import { ViewEventComponent } from './view-event/view-event.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,12 @@ import { ViewEventComponent } from './view-event/view-event.component';
     ViewEventComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    AddEventComponent,
+    ViewEventComponent
   ]
 })
 export class EventsModule { }
