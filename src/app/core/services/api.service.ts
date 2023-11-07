@@ -12,6 +12,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  public getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseURL}/users`);
+  }
+
   public getToAuth(email: string, password: string): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseURL}/users?email=${email}&password=${password}`);
   }
@@ -19,15 +23,15 @@ export class ApiService {
   public createUser(user: User): Observable<User> {
     return this.http.post<User>(`${this.baseURL}/users`, user);
   }
-  public checkUserByEmail(email: string): Observable<boolean>{
-    return this.http.get<boolean>(`${this.baseURL}/users?email=${email}`);
+  public checkUserByEmail(email: string): Observable<User[]>{
+    return this.http.get<User[]>(`${this.baseURL}/users?email=${email}`);
   }
   
-  public checkUserByDni(dni: string): Observable<boolean>{
-    return this.http.get<boolean>(`${this.baseURL}/users?dni=${dni}`);
+  public checkUserByDni(dni: string): Observable<User[]>{
+    return this.http.get<User[]>(`${this.baseURL}/users?dni=${dni}`);
   }
 
-  public checkUserByUsername(userName: string): Observable<boolean>{
-    return this.http.get<boolean>(`${this.baseURL}/users?userName=${userName}`);
+  public checkUserByUsername(userName: string): Observable<User[]>{
+    return this.http.get<User[]>(`${this.baseURL}/users?userName=${userName}`);
   }
 }

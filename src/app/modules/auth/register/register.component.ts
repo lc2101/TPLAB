@@ -37,7 +37,7 @@ export class RegisterComponent {
 
   }
 
-  public userRegister() {
+  public async userRegister() {
     this.user!.name = this.registerForm.value.name;
     this.user!.lastName = this.registerForm.value.lastName;
     this.user!.birthDate = this.registerForm.value.birthDate;
@@ -50,15 +50,25 @@ export class RegisterComponent {
       .then((resp: any) => alert("Usuario registrado exitosamente"))
       .catch((error: any) => alert("No se pudo registrar el usuario"));*/
 
-    this.authService.checkUserByDni(this.user!.dni).then(() => {
-      this.authService.checkUserByEmail(this.user!.email).then(() => {
-        this.authService.checkUserByUsername(this.user!.userName).then(() => {
+    let checkDNI = await this.authService.checkUserByDni(this.user.dni!);
+    let checkEmail = await this.authService.checkUserByEmail(this.user.email!);
+    let checkUsername = await this.authService.checkUserByUsername(this.user.userName!);
+    
+    if (!checkDNI) {
+      if (!checkEmail) {
+        if (!checkUsername) {
           this.authService.createUser(this.user!)
-            .then(() => alert("Usuario registrado exitosamente"))
-            .catch(() => alert("No se pudo registrar el usuario"));
-        }).catch(() => alert("El nombre de usuario ya existe"));
-      }).catch(() => alert("El email ya existe"));
-    }).catch(() => alert("El dni ya existe"));
+          .then(() => alert("Usuario registrado exitosamente"))
+          .catch(() => alert("No se pudo registrar el usuario"));
+        } else {
+          alert("Nombre de usuario no disponible")
+        }
+      } else {
+        alert("Email ya registrado")
+      }
+    } else {
+      alert("DNI ya registrado")
+    }
     
   }
   
