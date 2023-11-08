@@ -20,9 +20,9 @@ export class AuthService {
 
       let apiResponse = this.apiService.getToAuth(email, password);
 
-      let userRespone = await lastValueFrom(apiResponse);
+      let userResponse = await lastValueFrom(apiResponse);
 
-      this.user = userRespone[0];
+      this.user = userResponse[0];
 
       if (this.user) {
         //localStorage.setItem('token', this.user.id!.toString());
@@ -35,33 +35,77 @@ export class AuthService {
     return isLogin;
   }
 
-  public checkUserByEmail(email: string): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      this.apiService.checkUserByUsername(email).subscribe({
-        next: data => resolve(data),
-        error: error => reject(error)
-      })
-    });
+  public async checkUserByEmail(email: string): Promise<boolean> {
+
+    let respuesta = false;
+
+    try {
+
+      let user2: User | null | undefined = null;
+
+      let apiResponse = this.apiService.checkUserByEmail(email);
+
+      let userResponse = await lastValueFrom(apiResponse);
+
+      user2 = userResponse[0];
+
+      if (user2) {
+        respuesta = true;
+      }
+    } catch (error) {
+      throw error;
+    }
+
+    return respuesta;
   }
-  
-  public checkUserByDni(dni: string): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      this.apiService.checkUserByUsername(dni).subscribe({
-        next: data => resolve(data),
-        error: error => reject(error)
-      })
-    });
+
+  public async checkUserByDni(dni: string): Promise<boolean> {
+
+    let respuesta = false;
+
+    try {
+
+      let user2: User | null | undefined = null;
+
+      let apiResponse = this.apiService.checkUserByDni(dni);
+
+      let userResponse = await lastValueFrom(apiResponse);
+
+      user2 = userResponse[0];
+
+      if (user2) {
+        respuesta = true;
+      }
+    } catch (error) {
+      throw error;
+    }
+
+    return respuesta;
   }
-  
-  public checkUserByUsername(userName: string): Promise<boolean> {
-    
-    return new Promise<boolean>((resolve, reject) => {
-      this.apiService.checkUserByUsername(userName).subscribe({
-        next: data => resolve(data),
-        error: error => reject(error)
-      })
-    }); 
-   }
+
+  public async checkUserByUsername(username: string): Promise<boolean> {
+
+    let respuesta = false;
+
+    try {
+
+      let user2: User | null | undefined = null;
+
+      let apiResponse = this.apiService.checkUserByUsername(username);
+
+      let userResponse = await lastValueFrom(apiResponse);
+
+      user2 = userResponse[0];
+
+      if (user2) {
+        respuesta = true;
+      }
+    } catch (error) {
+      throw error;
+    }
+
+    return respuesta;
+  }
   
   public createUser(user: User): Promise<User> {
     
