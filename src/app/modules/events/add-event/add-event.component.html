@@ -1,7 +1,7 @@
 <div>
     <h2>Agregar Evento</h2>
 
-    <form autocomplete="off" [formGroup]="addEventForm" (ngSubmit)="createEvent()">
+    <form autocomplete="off" [formGroup]="addEventForm" (ngSubmit)="onSubmit()">
         <div>
 
             <label for="name">Nombre: </label>
@@ -44,6 +44,22 @@
             <div>
         
                 <span *ngIf="isValidField('hour')">
+                    Campo requerido
+                </span>
+        
+            </div>
+        
+        </div>
+
+        <div>
+        
+            <label for="place">Lugar: </label>
+        
+            <input type="text" id="place" formControlName="place" placeholder="Lugar del evento" />
+        
+            <div>
+        
+                <span *ngIf="isValidField('place')">
                     Campo requerido
                 </span>
         

@@ -36,10 +36,10 @@ export class HomeComponent {
     this.apiService.addEvent(event).subscribe({
       next: () => {
         this.getEvents();
-        alert("Persona creada con exito");
+        alert("Evento creado con exito");
       },
       error: () => {
-        alert("No se ha podido crear a la persona");
+        alert("No se ha podido crear el evento");
       }
     })
   }

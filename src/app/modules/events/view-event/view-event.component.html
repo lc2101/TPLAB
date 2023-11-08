@@ -1,1 +1,29 @@
-<h1>Eventos</h1>
+<div>
+    <h2>Eventos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Lugar</th>
+                <th>Descripcion</th>
+                <th>Categoria</th>
+                <th>Imagen</th>
+                <th>Tickets</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of events">
+                <td>{{event.name}}</td>
+                <td>{{event.date}}</td>
+                <td>{{event.hour}}</td>
+                <td>{{event.place}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.category}}</td>
+                <td>{{event.image}}</td>
+                <td>{{event.tickets}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

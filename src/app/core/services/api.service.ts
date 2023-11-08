@@ -45,8 +45,8 @@ export class ApiService {
     return this.http.get<Event[]>(`${this.baseURL}/events?name=${name}`);
   }
 
-  addEvent(createPerson: Event): Observable<boolean> {
-    return this.http.post<boolean>(`${this.baseURL}/events`, createPerson);
+  addEvent(createEvent: Event): Observable<boolean> {
+    return this.http.post<boolean>(`${this.baseURL}/events`, createEvent);
   }
 
   deleteEvent(id: number): Observable<boolean> {
