@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/core/services/auth.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Event } from 'src/app/core/Models';
 
@@ -12,6 +13,8 @@ export class ViewEventComponent {
   @Output() public eventToDelete: EventEmitter<number> = new EventEmitter();
   @Output() public eventToEdit: EventEmitter<Event> = new EventEmitter();
   
+  constructor(private authService: AuthService){}
+
   ngOnInit(): void {
   }
 
@@ -21,6 +24,10 @@ export class ViewEventComponent {
 
   public editEvent(updateEvent: Event) {
     this.eventToEdit.emit(updateEvent);
+  }
+
+  public checkUser() {
+    return this.authService.checkAuthentication();
   }
 
 }

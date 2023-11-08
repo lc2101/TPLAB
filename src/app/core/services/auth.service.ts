@@ -25,7 +25,7 @@ export class AuthService {
       this.user = userResponse[0];
 
       if (this.user) {
-        //localStorage.setItem('token', this.user.id!.toString());
+        localStorage.setItem('token', this.user.id!.toString());
         isLogin = true;
       }
     } catch (error) {
@@ -115,5 +115,9 @@ export class AuthService {
         error: error => reject(error)
       })
     });
+  }
+
+  public checkAuthentication(): string{
+    return localStorage.getItem('token')!;
   }
 }
