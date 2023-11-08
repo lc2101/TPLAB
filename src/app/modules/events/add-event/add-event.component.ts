@@ -16,6 +16,7 @@ export class AddEventComponent {
   addEventForm: FormGroup = this.fb.group({
     name: new FormControl('', [Validators.required]),
     date: new FormControl('', [Validators.required]),
+    hour: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
     category: new FormControl('', [Validators.required]),
     image: new FormControl('',[Validators.required]),

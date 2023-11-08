@@ -1,3 +1,5 @@
+import { Time } from "@angular/common";
+
 export interface IUser {
   "id": number | null;
   "userName": string;
@@ -21,6 +23,7 @@ export interface IEvent {
   "id": number | null;
   "name": string;
   "date": Date | null;
+  "hour": Time | null;
   "description": string;
   "category": string;
   "image": string;

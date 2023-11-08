@@ -1,3 +1,4 @@
+import { Time } from "@angular/common";
 import { IEvent, ITicket, IUser } from "./Interfaces";
 
 export class User implements IUser {
@@ -31,7 +32,8 @@ export class Event implements IEvent {
 
   id: number | null = null;
   name: string = '';
-  date: Date| null = null;
+  date: Date | null = null;
+  hour: Time | null = null;
   description: string = '';
   category: string = '';
   image: string = '';
@@ -40,6 +42,7 @@ export class Event implements IEvent {
   constructor(event?: any) {
     this.id = event.id != null ? event.id : null;
     this.date = event.date != null ? event.date : null;
+    this.hour = event.hour != null ? event.hour : null;
     this.description = event.description != undefined ? event.description : undefined;
     this.category = event.category != undefined ? event.category : undefined;
     this.image = event.image != undefined ? event.image : undefined;

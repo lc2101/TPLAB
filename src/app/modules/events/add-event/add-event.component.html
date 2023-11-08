@@ -36,6 +36,22 @@
         </div>
 
         <div>
+        
+            <label for="hour">Hora: </label>
+        
+            <input type="time" id="hour" formControlName="hour" />
+        
+            <div>
+        
+                <span *ngIf="isValidField('hour')">
+                    Campo requerido
+                </span>
+        
+            </div>
+        
+        </div>
+
+        <div>
 
             <label for="description">Descripcion: </label>
 
