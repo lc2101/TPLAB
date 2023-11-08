@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { Event } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent {
 
   public events: Array<Event> = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private authService: AuthService) {}
   
   ngOnInit(): void {
     this.getEvents();

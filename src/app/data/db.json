@@ -17,42 +17,6 @@
       "name": "Maxi",
       "lastName": "Gonzalez",
       "suscription": null
-    },
-    {
-      "id": 3,
-      "userName": "33gggf",
-      "email": "maxigf95@gmail.com",
-      "password": "12Maxi",
-      "age": null,
-      "dni": "123123",
-      "birthDate": "2023-10-30",
-      "name": "Maxi",
-      "lastName": "Gonzalez",
-      "suscription": null
-    },
-    {
-      "id": 4,
-      "userName": "12354gg",
-      "email": "maxigf95@gmail.com",
-      "password": "123Jffd",
-      "age": null,
-      "dni": "123123",
-      "birthDate": "2023-10-29",
-      "name": "Maxi",
-      "lastName": "Gonzalez",
-      "suscription": null
-    },
-    {
-      "id": 5,
-      "userName": "kjk233",
-      "email": "jfjf@gmail.com",
-      "password": "Kj2333",
-      "age": null,
-      "dni": "32323",
-      "birthDate": "2023-10-29",
-      "name": "Maxi",
-      "lastName": "Gonzalez",
-      "suscription": null
     }
   ],
   "events": [
