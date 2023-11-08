@@ -54,5 +54,18 @@
       "lastName": "Gonzalez",
       "suscription": null
     }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "name": "Final Copa Argentina 2023",
+      "date": "23/11/2023",
+      "hour": "21:15",
+      "place": "Mendoza",
+      "description": "Final entre Sarmiento y Central Cordoba",
+      "category": "Futbol",
+      "image": "sss",
+      "tickets": 25000
+    }
   ]
 }

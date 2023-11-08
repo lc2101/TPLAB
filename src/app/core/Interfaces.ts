@@ -24,6 +24,7 @@ export interface IEvent {
   "name": string;
   "date": Date | null;
   "hour": Time | null;
+  "place": string;
   "description": string;
   "category": string;
   "image": string;

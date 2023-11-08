@@ -34,6 +34,7 @@ export class Event implements IEvent {
   name: string = '';
   date: Date | null = null;
   hour: Time | null = null;
+  place: string = '';
   description: string = '';
   category: string = '';
   image: string = '';
@@ -41,8 +42,10 @@ export class Event implements IEvent {
 
   constructor(event?: any) {
     this.id = event.id != null ? event.id : null;
+    this.name = event.name != undefined ? event.name : undefined;
     this.date = event.date != null ? event.date : null;
     this.hour = event.hour != null ? event.hour : null;
+    this.place = event.place != undefined ? event.place : undefined;
     this.description = event.description != undefined ? event.description : undefined;
     this.category = event.category != undefined ? event.category : undefined;
     this.image = event.image != undefined ? event.image : undefined;
