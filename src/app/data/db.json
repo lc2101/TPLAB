@@ -1,10 +1,35 @@
 {
-    "users": [
+  "users": [
     {
       "id": 1,
       "userName": "admin",
       "email": "admin@gmail.com",
       "password": "admin123"
+    },
+    {
+      "id": 2,
+      "userName": "123max",
+      "email": "maxigf95@gmail.com",
+      "password": "123Maxi",
+      "age": null,
+      "dni": "123123",
+      "birthDate": "2023-10-29",
+      "name": "Maxi",
+      "lastName": "Gonzalez",
+      "suscription": null
     }
-    ]
+  ],
+  "events": [
+    {
+      "id": 1,
+      "name": "Final Copa Argentina 2023",
+      "date": "23/11/2023",
+      "hour": "21:15",
+      "place": "Mendoza",
+      "description": "Final entre Sarmiento y Central Cordoba",
+      "category": "Futbol",
+      "image": "qwerr",
+      "tickets": 25000
+    }
+  ]
 }

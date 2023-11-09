@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-<h1>Eventos</h1>
-=======
 <div>
     <h2>Eventos</h2>
     <table>
@@ -14,9 +11,6 @@
                 <th>Categoria</th>
                 <th>Imagen</th>
                 <th>Tickets</th>
-                <th *ngIf="checkUser() === '1' ">Editar</th>
-                <th *ngIf="checkUser() !== '1' ">Comprar</th>
-               
             </tr>
         </thead>
         <tbody>
@@ -29,11 +23,10 @@
                 <td>{{event.category}}</td>
                 <td>{{event.image}}</td>
                 <td>{{event.tickets}}</td>
-                
+                <td><button (click)="editEvent(event!)">EDITAR</button></td>
             </tr>
         </tbody>
     </table>
 
     <p *ngIf="checkUser() === '2' ">Hola usuario</p>
 </div>
->>>>>>> Stashed changes
