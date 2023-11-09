@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { lastValueFrom } from 'rxjs';
 import { Event } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
-import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +11,13 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class HomeComponent {
 
-  public events: Array<Event> = [];
+  @ViewChild('editEventDialog', { static: false }) editEventDialog!: TemplateRef<any>;
 
-  constructor(private apiService: ApiService, private authService: AuthService) {}
+  public events: Array<Event> = [];
+  public editEvent: Event = { id: 0, name: '', date: null, hour: null, place: '', description: '', category: '', image: '', tickets: 0};
+  public isPopupVisible = false;
+
+  constructor(private apiService: ApiService, private dialog: MatDialog) {}
   
   ngOnInit(): void {
     this.getEvents();
@@ -57,11 +61,55 @@ export class HomeComponent {
     })
    }
   
-  /*public editEvent(updateEvent: Event) {
-    const dialogRef = this.dialog.open(EditEventComponent, { data: updateEvent, height: '500px', width: '500px' });
+  public updateEvent() {
+    console.log(this.editEvent);
+    this.apiService.editEvent(this.editEvent.id!, this.editEvent).subscribe({
+      next: () => {
+        this.closeDialog();
+        this.getEvents()
+      },
+      error: (error) => alert(error)
+    })
+  }
+
+  public openEditEventDialog(event: Event): void {
+    this.editEvent = structuredClone(event);
+
+    const dialogRef = this.dialog.open(this.editEventDialog, {
+      height: '500px',
+      width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe((result: Event | undefined) => {
+      if (result) {
+        console.log(result);
+      }
+    });
+
+  }
+
+  public closeDialog(): void {
+    this.dialog.closeAll(); // Cierra todos los diálogos abiertos
+  }
+
+  /*
+  public editPerson(){
+
+    this.apiService.editPerson(this.person.id!, this.person).subscribe({
+      next: () => this.dialogRef.close(true),
+      error: (error) => alert(error)
+    })
+  }
+
+  public closeDialog(){
+    this.dialogRef.close(false);
+  }
+
+  public editPerson(updatePerson: Person) {
+    const dialogRef = this.dialog.open(EditPersonComponent, { data: updatePerson, height: '500px', width: '500px' });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
     })
-  }*/
+  */ 
 }
