@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { lastValueFrom } from 'rxjs';
 import { Event } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent {
   public editEvent: Event = { id: 0, name: '', date: null, hour: null, place: '', description: '', category: '', image: '', tickets: 0};
   public isPopupVisible = false;
 
-  constructor(private apiService: ApiService, private dialog: MatDialog) {}
+  constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog) {}
   
   ngOnInit(): void {
     this.getEvents();
@@ -53,10 +54,10 @@ export class HomeComponent {
     this.apiService.deleteEvent(id).subscribe({
       next: () => {
         this.getEvents();
-        alert("Persona eliminada con exito");
+        alert("Evento eliminado con exito");
       },
       error: () => {
-        alert("No se ha podido eliminar a la persona");
+        alert("No se ha podido eliminar el evento");
       }
     })
    }
@@ -92,24 +93,7 @@ export class HomeComponent {
     this.dialog.closeAll(); // Cierra todos los diálogos abiertos
   }
 
-  /*
-  public editPerson(){
-
-    this.apiService.editPerson(this.person.id!, this.person).subscribe({
-      next: () => this.dialogRef.close(true),
-      error: (error) => alert(error)
-    })
+  public checkUser() {
+    return this.authService.checkAuthentication();
   }
-
-  public closeDialog(){
-    this.dialogRef.close(false);
-  }
-
-  public editPerson(updatePerson: Person) {
-    const dialogRef = this.dialog.open(EditPersonComponent, { data: updatePerson, height: '500px', width: '500px' });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-    })
-  */ 
 }
