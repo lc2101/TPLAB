@@ -1,32 +1,35 @@
-import { Time } from "@angular/common";
-
 export interface IUser {
-  "id": number | null;
-  "userName": string;
-  "email": string;
-  "password": string;
-  "age": string;
-  "dni": string;
-  "birthDate": Date | null;
-  "name": string;
-  "lastName": string;
-  "suscription": string;
+  id: number | null;
+  userName: string | null;
+  email: string | null;
+  password: string | null;
+  age: string | null;
+  dni: string | null;
+  birthDate: Date | null;
+  name: string | null;
+  lastName: string | null;
+  suscription: string | null;
 }
 
+<<<<<<< Updated upstream
+export interface ITickets {
+  id: number | null;
+  idUser: number | null;
+  idEvent: number | null;
+=======
 export interface ITicket {
   "id": number | null;
   "idUser": number | null;
   "idEvent": number | null;
+  "ticketQ": number | null;
+>>>>>>> Stashed changes
 }
 
 export interface IEvent {
-  "id": number | null;
-  "name": string;
-  "date": Date | null;
-  "hour": Time | null;
-  "place": string;
-  "description": string;
-  "category": string;
-  "image": string;
-  "tickets": number | null;
+  id: number | null;
+  date: Date | null;
+  description: string | null;
+  category: string | null;
+  image: string | null;
+  tickets: number | null;
 }
