@@ -1,31 +1,27 @@
-import { IUser } from "./Interfaces";
+import { Time } from "@angular/common";
+import { IEvent, ITicket, IUser } from "./Interfaces";
 
 export class User implements IUser {
 
-  id: number | null;
-  userName: string | null;
-  email: string | null;
-  password: string | null;
-  age: string | null;
-  dni: string | null;
-  birthDate: Date | null;
-  name: string | null;
-  lastName: string | null;
-  suscription: string | null;
+  id: number | null = null;
+  userName: string = '';
+  email: string = '';
+  password: string = '';
+  age: string = '';
+  dni: string = '';
+  birthDate: Date | null = null;
+  name: string = '';
+  lastName: string = '';
+  suscription: string = '';
 
   constructor(user?: any) {
     this.id = user.id != null ? user.id : null;
-    this.userName = user.userName != null ? user.userName : null;
-    this.email = user.email != null ? user.email : null;
-    this.password = user.password != null ? user.password : null;
-    this.age = user.age != null ? user.age : null;
-    this.dni = user.dni != null ? user.dni : null;
+    this.userName = user.userName != undefined ? user.userName : undefined;
+    this.email = user.email != undefined ? user.email : undefined;
+    this.password = user.password != undefined ? user.password : undefined;
+    this.age = user.age != undefined ? user.age : undefined;
+    this.dni = user.dni != undefined ? user.dni : undefined;
     this.birthDate = user.birthDate != null ? user.birthDate : null;
-<<<<<<< Updated upstream
-    this.name = user.name != null ? user.name : null;
-    this.lastName = user.lastName != null ? user.lastName : null;
-    this.suscription = user.suscription != null ? user.suscription : null;
-=======
     this.name = user.name != undefined ? user.name : undefined;
     this.lastName = user.lastName != undefined ? user.lastName : undefined;
     this.suscription = user.suscription != undefined ? user.suscription : undefined;
@@ -62,19 +58,11 @@ export class Ticket implements ITicket {
   id: number | null = null;
   idUser: number | null = null;
   idEvent: number | null = null;
-  ticketQ: number | null = null;
-<<<<<<< Updated upstream
-
-=======
-  
->>>>>>> Stashed changes
 
   constructor(ticket?: any) {
     this.id = ticket.id != null ? ticket.id : null;
     this.idUser = ticket.idUser != null ? ticket.idUser : null;
     this.idEvent = ticket.idEvent != null ? ticket.idEvent : null;
-    this.ticketQ = ticket.ticketQ != null ? ticket.ticketQ : null;
->>>>>>> Stashed changes
   }
 
 }

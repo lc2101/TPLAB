@@ -30,17 +30,6 @@
       "category": "Futbol",
       "image": "qwerr",
       "tickets": 25000
-    },
-    {
-      "id": 2,
-      "name": "Taylor Swift",
-      "date": "2023-11-11",
-      "hour": "21:00",
-      "place": "Monumental",
-      "description": "Eras Tour",
-      "category": "Concierto",
-      "image": "taylor en pedo",
-      "tickets": 80000
     }
   ]
 }
