@@ -63,11 +63,7 @@ export class Ticket implements ITicket {
   idUser: number | null = null;
   idEvent: number | null = null;
   ticketQ: number | null = null;
-<<<<<<< Updated upstream
 
-=======
-  
->>>>>>> Stashed changes
 
   constructor(ticket?: any) {
     this.id = ticket.id != null ? ticket.id : null;
