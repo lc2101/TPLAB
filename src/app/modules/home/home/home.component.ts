@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { lastValueFrom } from 'rxjs';
 import { Event } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent {
   public editEvent: Event = { id: 0, name: '', date: null, hour: null, place: '', description: '', category: '', image: '', tickets: 0};
   public isPopupVisible = false;
 
-  constructor(private apiService: ApiService, private dialog: MatDialog) {}
+  constructor(private apiService: ApiService, private dialog: MatDialog
+    ,private authService: AuthService) {}
   
   ngOnInit(): void {
     this.getEvents();
@@ -91,6 +93,7 @@ export class HomeComponent {
   public closeDialog(): void {
     this.dialog.closeAll(); // Cierra todos los diálogos abiertos
   }
+<<<<<<< Updated upstream
 
   /*
   public editPerson(){
@@ -112,4 +115,9 @@ export class HomeComponent {
       console.log(result);
     })
   */ 
+=======
+  public checkUser() {
+    return this.authService.checkAuthentication();
+  }
+>>>>>>> Stashed changes
 }

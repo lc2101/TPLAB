@@ -23,7 +23,12 @@
                 <td>{{event.category}}</td>
                 <td>{{event.image}}</td>
                 <td>{{event.tickets}}</td>
+<<<<<<< Updated upstream
                 <td><button (click)="editEvent(event!)">EDITAR</button></td>
+=======
+                <td *ngIf="checkUser() === '1' "><button (click)="editEvent(event!)">EDITAR</button></td>
+                <td *ngIf="checkUser() === '1' "><button (click)="deleteEvent(event.id!)">Eliminar</button></td>
+>>>>>>> Stashed changes
             </tr>
         </tbody>
     </table>
