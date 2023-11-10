@@ -30,6 +30,17 @@
       "category": "Futbol",
       "image": "qwerr",
       "tickets": 25000
+    },
+    {
+      "id": 2,
+      "name": "asdf",
+      "date": "2023-10-30",
+      "hour": "19:02",
+      "place": "asdf",
+      "description": "asdf",
+      "category": "sadf",
+      "image": "asdf",
+      "tickets": 123
     }
   ]
 }

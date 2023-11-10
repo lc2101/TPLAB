@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AddEventComponent } from './add-event/add-event.component';
 import { ViewEventComponent } from './view-event/view-event.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -13,7 +15,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   exports: [
     AddEventComponent,
