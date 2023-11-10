@@ -53,8 +53,10 @@
 
   <app-nav-bar></app-nav-bar>
   <div>
+    <div *ngIf="checkUser() === '1'">
+      <app-add-event (eventToCreate)="createEvent($event)" hidden="true"></app-add-event>
+    </div>
     <app-view-event [events]="events" (eventToDelete)="deleteEvent($event)" (eventToEdit)="openEditEventDialog($event)"></app-view-event>
-    <app-add-event (eventToCreate)="createEvent($event)"></app-add-event>
     <div *ngIf="isPopupVisible" class="popup-overlay">
       <ng-container *ngTemplateOutlet="editEventDialog"></ng-container>
     </div>

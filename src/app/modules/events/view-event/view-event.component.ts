@@ -19,7 +19,8 @@ export class ViewEventComponent {
   }
 
   public deleteEvent(id: number) {
-    this.eventToDelete.emit(id);
+    if(confirm('Esta seguro que desea eliminar el evento?'))
+      this.eventToDelete.emit(id);
   }
 
   public editEvent(updateEvent: Event) {
