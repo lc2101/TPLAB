@@ -26,6 +26,7 @@ export class AuthService {
 
       if (this.user) {
         localStorage.setItem('token', this.user.id!.toString());
+        localStorage.setItem('user', JSON.stringify(this.user));
         isLogin = true;
       }
     } catch (error) {
@@ -106,6 +107,11 @@ export class AuthService {
 
     return respuesta;
   }
+
+  public logout() {
+    this.user = undefined;
+    localStorage.clear();
+  }
   
   public createUser(user: User): Promise<User> {
     
@@ -117,7 +123,32 @@ export class AuthService {
     });
   }
 
+  public async updateUser(user: User): Promise<User | null> {
+
+    let resp: User | null = null;
+
+    try {
+      const apiResp = this.apiService.updateUser(user);
+      resp = await lastValueFrom(apiResp);
+    } catch (error) {
+      throw error;
+    }
+
+    return resp;
+    
+  }
+
   public checkAuthentication(): string{
     return localStorage.getItem('token')!;
+  }
+
+  public checkSession(): boolean {
+    return localStorage.getItem('token') ? true : false;
+  }
+
+  public getUserData(): User {
+    const userString = localStorage.getItem(('user'));
+    this.user = userString ? JSON.parse(userString) : null;
+    return this.user!;
   }
 }

@@ -1,7 +1,8 @@
 
 
-  <app-nav-bar></app-nav-bar>
-  <div >
+  <app-nav-bar [isUser]="true"></app-nav-bar>
+
+  <div>
     <div *ngIf="checkUser() === '1'">
       <app-add-event (eventToCreate)="createEvent($event)" ></app-add-event>
     </div>
@@ -10,8 +11,9 @@
     <div *ngIf="isPopupVisible" class="popup-overlay">
       <ng-container *ngTemplateOutlet="editEventDialog"></ng-container>
     </div>
-
   </div>
+
+  <app-footer></app-footer>
 
 <ng-template #editEventDialog>
   <h2 mat-dialog-title class="custom-dialog-title">Editar Evento</h2>

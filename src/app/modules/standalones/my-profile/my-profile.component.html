@@ -1,100 +1,92 @@
 <div>
-    <h2>REGISTRO</h2>
+    <h2>MI PERFIL</h2>
 
-    <form autocomplete="off" [formGroup]="registerForm" (ngSubmit)="userRegister()">
+    <form autocomplete="off" [formGroup]="updateForm" (ngSubmit)="updateUser()">
         <div>
-        
+
             <label for="name">Nombre: </label>
-        
-            <input type="text" id="name" formControlName="name" placeholder="Ingrese su/s nombre/s"/>
+
+            <input type="text" id="name" formControlName="name" [value]="user.name" />
             <div>
-                
+
                 <span *ngIf="isValidField('name')">
                     {{ getFieldError('name', 'nombre') }}
                 </span>
 
             </div>
-        
-            
-        
+
+
+
         </div>
 
         <div>
-        
+
             <label for="lastName">Apellido: </label>
-        
-            <input type="text" id="lastName" formControlName="lastName" placeholder="Ingrese su/s apellido/s"/>
-            
+
+            <input type="text" id="lastName" formControlName="lastName" [value]="user.lastName" />
+
             <div>
-            
+
                 <span *ngIf="isValidField('lastName')">
                     {{ getFieldError('lastName', 'apellido') }}
                 </span>
-            
+
             </div>
-        
+
         </div>
 
         <div>
-        
+
             <label for="dni">DNI: </label>
-        
-            <input type="text" id="dni" formControlName="dni" placeholder="Ingrese su nro de Documento"/>
-            
+
+            <input type="text" id="dni" formControlName="dni" [value]="user.dni" />
+
             <div>
-            
+
                 <span *ngIf="isValidField('dni')">
                     {{ getFieldError('dni', 'documento') }}
                 </span>
-            
+
             </div>
-        
+
         </div>
 
         <div>
-        
+
             <label for="birthDate">Fecha de Nacimiento: </label>
-        
-            <input type="date" id="birthDate" formControlName="birthDate"/>
+
+            <input type="date" id="birthDate" formControlName="birthDate" [value]="user.birthDate" />
 
             <div>
-            
+
                 <span *ngIf="isValidField('birthDate')">
                     {{ getFieldError('birthDate', 'Fecha de nacimiento') }}
                 </span>
-            
+
             </div>
-        
+
         </div>
 
         <div>
-        
+
             <label for="userName">Usuario: </label>
-        
-            <input type="text" id="userName" formControlName="userName" placeholder="Ingrese su nombre de usuario"/>
-            
-            <div>
-            
-                <span *ngIf="isValidField('userName')">
-                    {{ getFieldError('userName', 'nombre de usuario') }}
-                </span>
-            
-            </div>
-        
+
+            <input type="text" id="userName" formControlName="userName" [value]="user.userName" readonly />
+
         </div>
 
         <div>
 
             <label for="email">Email: </label>
 
-            <input type="email" id="email" formControlName="email" placeholder="Ingrese su email"/>
-            
+            <input type="email" id="email" formControlName="email" [value]="user.email" />
+
             <div>
-            
+
                 <span *ngIf="isValidField('email')">
                     {{ getFieldError('email', 'email') }}
                 </span>
-            
+
             </div>
 
         </div>
@@ -103,18 +95,18 @@
 
             <label for="password">Contraseña: </label>
 
-            <input type="password" id="password" formControlName="password" placeholder="Ingrese su contraseña"/>
+            <input type="password" id="password" formControlName="password" [value]="user.password" />
 
             <div>
-            
+
                 <span *ngIf="isValidField('password')">
                     {{ getFieldError('password', 'contraseña') }}
                 </span>
-            
+
             </div>
 
         </div>
 
-        <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+        <button type="submit" [disabled]="updateForm.invalid">Guardar Cambios</button>
     </form>
 </div>

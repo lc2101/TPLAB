@@ -55,6 +55,17 @@
     }
   ],
   "tickets": [
-    
+    {
+      "id": 1,
+      "idUser": 2,
+      "idEvent": 2,
+      "ticketQ": 3
+    },
+    {
+      "id": 2,
+      "idUser": 2,
+      "idEvent": 3,
+      "ticketQ": 4
+    }
   ]
 }

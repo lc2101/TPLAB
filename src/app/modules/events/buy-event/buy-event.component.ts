@@ -13,7 +13,8 @@ export class BuyEventComponent implements OnInit {
 
   public newTicket: Ticket = new Ticket({id:0});
   public theEvent: Event= new Event({id:0});
-  public ticketQ: number=0;
+  public ticketQ: number = 0;
+  public ticketOptions: Array<number> = [1, 2, 3, 4];
 
 constructor(@Inject(MAT_DIALOG_DATA) public data:any, private apiService : ApiService,
 private dialogRef: MatDialogRef<BuyEventComponent>, private authService:AuthService)
