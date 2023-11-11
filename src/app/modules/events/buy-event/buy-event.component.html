@@ -1,0 +1,44 @@
+
+<div class="container">
+    <h2 mat-dialog-title class="custom-dialog-title">Comprar entradas</h2>
+
+  
+    <div mat-dialog-content>
+        <mat-card class="event-card">
+        <img src={{theEvent.image}}>
+        <mat-card-header class="header">
+            <mat-card-title>{{theEvent.name}}</mat-card-title>
+            <mat-card-subtitle>{{theEvent.place}}</mat-card-subtitle>
+            <mat-card-subtitle>{{theEvent.date}} - {{theEvent.hour}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                {{theEvent.description}}
+            </p>
+        </mat-card-content>
+        
+    </mat-card>
+    <form (ngSubmit)="buy()" class="custom-form">
+      
+            
+        <select name="ticketQ" id="ticketQ" [(ngModel)]="ticketQ"  required>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+        </select>
+
+        
+
+      <div mat-dialog-actions>
+        
+       <button mat-button type="submit" class="custom-button" disabled="{{ticketQ===0}}">Comprar</button>
+       
+    </div>
+
+ </form>
+ <div mat-dialog-actions>
+ <button mat-button (click)="closeDialog()" class="custom-button">Cancelar</button>
+    </div>
+</div>
+

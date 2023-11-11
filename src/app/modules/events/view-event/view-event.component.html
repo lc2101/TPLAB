@@ -49,15 +49,16 @@
             </p>
         </mat-card-content>
         <mat-card-footer>
-            <mat-card-actions class="buttons" *ngIf="checkUser() === '1'; else user">
+            <mat-card-actions class="buttons" *ngIf="checkUser() === '1';">
                 <button mat-button (click)="editEvent(event!)">EDITAR</button>
                 <button mat-button (click)="deleteEvent(event.id!)">ELIMINAR</button>
+            </mat-card-actions>
+            <mat-card-actions class="buttons" *ngIf="checkUser() !== '1';">
+                <button mat-button (click)="buyTicket(event!)">COMPRAR</button>
+             
             </mat-card-actions>
         </mat-card-footer>
     </mat-card>
 </div>
 
 
-<ng-template #user>
-    <button mat-button>COMPRAR</button>
-</ng-template>

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User, Event } from '../Models';
+import { User, Event, Ticket } from '../Models';
 import { Observable, catchError, map, of } from 'rxjs';
 
 @Injectable({
@@ -59,5 +59,8 @@ export class ApiService {
 
   editEvent(id: number, updateEvent: Event): Observable<boolean> {
     return this.http.put<boolean>(`${this.baseURL}/events/${id}`, updateEvent);
+  }
+  addTicket(createTicket: Ticket): Observable<boolean> {
+    return this.http.post<boolean>(`${this.baseURL}/tickets`, createTicket);
   }
 }

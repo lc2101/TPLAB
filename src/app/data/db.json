@@ -41,6 +41,20 @@
       "category": "sadf",
       "image": "asdf",
       "tickets": 123
+    },
+    {
+      "id": 3,
+      "name": "megadeth",
+      "date": "2024-05-22",
+      "hour": "03:00",
+      "place": "qweqe",
+      "description": "qweq",
+      "category": "qwewq",
+      "image": "qweqeqwqe",
+      "tickets": 10000
     }
+  ],
+  "tickets": [
+    
   ]
 }

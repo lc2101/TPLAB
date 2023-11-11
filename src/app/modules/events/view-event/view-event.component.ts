@@ -12,6 +12,7 @@ export class ViewEventComponent {
   @Input() public events: Array<Event> = [];
   @Output() public eventToDelete: EventEmitter<number> = new EventEmitter();
   @Output() public eventToEdit: EventEmitter<Event> = new EventEmitter();
+  @Output() public ticketToBuy: EventEmitter<Event> = new EventEmitter();
   
   constructor(private authService: AuthService){}
 
@@ -29,6 +30,10 @@ export class ViewEventComponent {
 
   public checkUser() {
     return this.authService.checkAuthentication();
+  }
+  public buyTicket(theEvent: Event)
+  {
+    this.ticketToBuy.emit(theEvent);
   }
 
 }

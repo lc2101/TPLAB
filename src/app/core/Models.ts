@@ -58,11 +58,12 @@ export class Ticket implements ITicket {
   id: number | null = null;
   idUser: number | null = null;
   idEvent: number | null = null;
-
+  ticketQ: number | null = null;
   constructor(ticket?: any) {
     this.id = ticket.id != null ? ticket.id : null;
     this.idUser = ticket.idUser != null ? ticket.idUser : null;
     this.idEvent = ticket.idEvent != null ? ticket.idEvent : null;
+    this.ticketQ = ticket.ticketQ != null ? ticket.ticketQ : null;
   }
 
 }
