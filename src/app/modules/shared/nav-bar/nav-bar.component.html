@@ -1,8 +1,9 @@
 <nav *ngIf="isUser" class="navbar">
   <div class="logo">
-        <h1>TICKETA</h1>
+        <a (click)="goToHome()">TICKETA</a>
   </div>
     <ul>
+      <li><a (click)="goToHome()">Home</a></li>
       <li><a (click)="goToProfile()">Mi Perfil</a></li>
       <li><a (click)="logout()">Cerrar Sesion</a></li>
     </ul>

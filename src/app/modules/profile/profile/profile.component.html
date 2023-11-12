@@ -1,12 +1,13 @@
+<app-nav-bar [isUser]="true"></app-nav-bar>
 <div>
     <h2>MI PERFIL</h2>
 
-    <form autocomplete="off" [formGroup]="updateForm" (ngSubmit)="updateUser()">
+    <form [formGroup]="updateForm" (ngSubmit)="updateUser()">
         <div>
 
             <label for="name">Nombre: </label>
 
-            <input type="text" id="name" formControlName="name" [value]="user.name" />
+            <input type="text" id="name" formControlName="name"/>
             <div>
 
                 <span *ngIf="isValidField('name')">
@@ -23,7 +24,7 @@
 
             <label for="lastName">Apellido: </label>
 
-            <input type="text" id="lastName" formControlName="lastName" [value]="user.lastName" />
+            <input type="text" id="lastName" formControlName="lastName"/>
 
             <div>
 
@@ -39,7 +40,7 @@
 
             <label for="dni">DNI: </label>
 
-            <input type="text" id="dni" formControlName="dni" [value]="user.dni" />
+            <input type="text" id="dni" formControlName="dni"/>
 
             <div>
 
@@ -55,7 +56,7 @@
 
             <label for="birthDate">Fecha de Nacimiento: </label>
 
-            <input type="date" id="birthDate" formControlName="birthDate" [value]="user.birthDate" />
+            <input type="date" id="birthDate" formControlName="birthDate"/>
 
             <div>
 
@@ -71,7 +72,7 @@
 
             <label for="userName">Usuario: </label>
 
-            <input type="text" id="userName" formControlName="userName" [value]="user.userName" readonly />
+            <input type="text" id="userName" formControlName="userName" readonly/>
 
         </div>
 
@@ -79,7 +80,7 @@
 
             <label for="email">Email: </label>
 
-            <input type="email" id="email" formControlName="email" [value]="user.email" />
+            <input type="email" id="email" formControlName="email"/>
 
             <div>
 
@@ -95,7 +96,7 @@
 
             <label for="password">Contraseña: </label>
 
-            <input type="password" id="password" formControlName="password" [value]="user.password" />
+            <input type="password" id="password" formControlName="password"/>
 
             <div>
 

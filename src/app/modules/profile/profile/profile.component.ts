@@ -1,15 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { User } from "src/app/core/Models";
-import { AuthService } from "src/app/core/services/auth.service";
-
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/core/Models';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
-  selector: 'app-my-profile',
-  templateUrl: './my-profile.component.html',
-  styleUrls: ['./my-profile.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class MyProfileComponent implements OnInit{
+export class ProfileComponent implements OnInit{
 
   public user: User = new User({ id : null, birthDate: null});
 
@@ -22,26 +21,26 @@ export class MyProfileComponent implements OnInit{
   private emailPattern: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   updateForm: FormGroup = this.fb.group({
-    name: new FormControl('', [Validators.required, Validators.pattern(this.namePattern)]),
-    lastName: new FormControl('', [Validators.required, Validators.pattern(this.namePattern)]),
-    birthDate: new FormControl('', [Validators.required]),
-    userName: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    dni: new FormControl('', [Validators.required, Validators.pattern(this.dniPattern)]),
-    email: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(this.passwordPattern)]),
+    name: new FormControl(`${this.getUserData().name}`, [Validators.required, Validators.pattern(this.namePattern)]),
+    lastName: new FormControl(`${this.getUserData().lastName}`, [Validators.required, Validators.pattern(this.namePattern)]),
+    birthDate: new FormControl(`${this.getUserData().birthDate}`, [Validators.required]),
+    userName: new FormControl(`${this.getUserData().userName}`, [Validators.required, Validators.minLength(6)]),
+    dni: new FormControl(`${this.getUserData().dni}`, [Validators.required, Validators.pattern(this.dniPattern)]),
+    email: new FormControl(`${this.getUserData().email}`, [Validators.required, Validators.pattern(this.emailPattern)]),
+    password: new FormControl(`${this.getUserData().password}`, [Validators.required, Validators.minLength(6), Validators.pattern(this.passwordPattern)]),
   })
 
   constructor(private authService: AuthService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.getUserData();
   }
   
-  public getUserData() {
-    this.user = structuredClone(this.authService.getUserData());
+  public getUserData(): User {
+    return structuredClone(this.authService.getUserData());
   }
 
   public async updateUser() {
+    this.user!.id = this.authService.getUserData().id;
     this.user!.name = this.updateForm.value.name;
     this.user!.lastName = this.updateForm.value.lastName;
     this.user!.birthDate = this.updateForm.value.birthDate;
@@ -53,8 +52,8 @@ export class MyProfileComponent implements OnInit{
     let checkDNI = await this.authService.checkUserByDni(this.user.dni!);
     let checkEmail = await this.authService.checkUserByEmail(this.user.email!);
     
-    if (!checkDNI) {
-      if (!checkEmail) {
+    if (checkDNI == null || checkDNI.id == this.user!.id ) {
+      if (checkEmail == null || checkEmail.id == this.user!.id) {
         if (confirm("Esta seguro que desea guardar los cambios realizados?")) {
             this.authService.updateUser(this.user!)
               .then(() => alert("Usuario actualizado!"))

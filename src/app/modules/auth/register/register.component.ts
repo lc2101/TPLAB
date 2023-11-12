@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from 'src/app/core/Models';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -30,7 +31,7 @@ export class RegisterComponent {
     password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(this.passwordPattern)]),
   })
 
-  constructor(private fb: FormBuilder, private authService: AuthService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
 
@@ -50,11 +51,14 @@ export class RegisterComponent {
     let checkEmail = await this.authService.checkUserByEmail(this.user.email!);
     let checkUsername = await this.authService.checkUserByUsername(this.user.userName!);
     
-    if (!checkDNI) {
-      if (!checkEmail) {
-        if (!checkUsername) {
+    if (checkDNI == null) {
+      if (checkEmail == null) {
+        if (checkUsername == null) {
           this.authService.createUser(this.user!)
-          .then(() => alert("Usuario registrado exitosamente"))
+            .then(() => {
+              alert("Usuario registrado exitosamente");
+              this.router.navigate(['/auth/login']);
+            })
           .catch(() => alert("No se pudo registrar el usuario"));
         } else {
           alert("Nombre de usuario no disponible")

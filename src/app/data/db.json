@@ -17,6 +17,26 @@
       "name": "Maxi",
       "lastName": "Gonzalez",
       "suscription": null
+    },
+    {
+      "id": 3,
+      "userName": "123maxi",
+      "email": "maxi.12@gmail.com",
+      "password": "123Maxi",
+      "dni": "1231235",
+      "birthDate": "2023-10-29",
+      "name": "Maxi",
+      "lastName": "Gonzalez"
+    },
+    {
+      "id": 4,
+      "userName": "dfddf123",
+      "email": "maxi@gmail.com",
+      "password": "J123asd",
+      "dni": "4321",
+      "birthDate": "2023-11-13",
+      "name": "Maxi",
+      "lastName": "Gonzalez"
     }
   ],
   "events": [

@@ -17,10 +17,10 @@ export class ApiService {
     return this.http.get<User[]>(`${this.baseURL}/users`);
   }
 
-  public updateUser(user: User): Observable<User> {
+  public updateUser(user: User): Observable<boolean> {
     if (!user.id) throw Error("El id del usuario es requerido");
 
-    return this.http.patch<User>(`${this.baseURL}/users/${user.id}`, user);
+    return this.http.patch<boolean>(`${this.baseURL}/users/${user.id}`, user);
   }
 
   public getToAuth(email: string, password: string): Observable<User[]> {

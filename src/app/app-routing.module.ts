@@ -4,7 +4,7 @@ import { LandingComponent } from './modules/landing/landing/landing.component';
 import { HomeComponent } from './modules/home/home/home.component';
 import { Error404Component } from './modules/standalones/error404/error404.component';
 import { authGuard } from './core/services/guard/auth-guard.service';
-import { MyProfileComponent } from './modules/standalones/my-profile/my-profile.component';
+import { ProfileComponent } from './modules/profile/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -19,12 +19,13 @@ const routes: Routes = [
   },
   {
     path: 'landing',
-    component:LandingComponent,
+    component: LandingComponent,
     loadChildren: () => import("./modules/landing/landing.module").then(m => m.LandingModule)
   },
   {
     path: 'profile',
-    component: MyProfileComponent,
+    component: ProfileComponent,
+    loadChildren: () => import("./modules/profile/profile.module").then(m => m.ProfileModule),
     canActivate: [authGuard]
   },
   {

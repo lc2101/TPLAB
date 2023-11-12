@@ -36,13 +36,11 @@ export class AuthService {
     return isLogin;
   }
 
-  public async checkUserByEmail(email: string): Promise<boolean> {
+  public async checkUserByEmail(email: string): Promise<User> {
 
-    let respuesta = false;
+    let user2: User | null = null;
 
     try {
-
-      let user2: User | null | undefined = null;
 
       let apiResponse = this.apiService.checkUserByEmail(email);
 
@@ -50,23 +48,18 @@ export class AuthService {
 
       user2 = userResponse[0];
 
-      if (user2) {
-        respuesta = true;
-      }
     } catch (error) {
       throw error;
     }
 
-    return respuesta;
+    return user2;
   }
 
-  public async checkUserByDni(dni: string): Promise<boolean> {
+  public async checkUserByDni(dni: string): Promise<User> {
 
-    let respuesta = false;
+    let user2: User | null = null;
 
     try {
-
-      let user2: User | null | undefined = null;
 
       let apiResponse = this.apiService.checkUserByDni(dni);
 
@@ -74,23 +67,18 @@ export class AuthService {
 
       user2 = userResponse[0];
 
-      if (user2) {
-        respuesta = true;
-      }
     } catch (error) {
       throw error;
     }
 
-    return respuesta;
+    return user2;
   }
 
-  public async checkUserByUsername(username: string): Promise<boolean> {
+  public async checkUserByUsername(username: string): Promise<User> {
 
-    let respuesta = false;
+    let user2: User | null = null;
 
     try {
-
-      let user2: User | null | undefined = null;
 
       let apiResponse = this.apiService.checkUserByUsername(username);
 
@@ -98,14 +86,11 @@ export class AuthService {
 
       user2 = userResponse[0];
 
-      if (user2) {
-        respuesta = true;
-      }
     } catch (error) {
       throw error;
     }
 
-    return respuesta;
+    return user2;
   }
 
   public logout() {
@@ -123,9 +108,9 @@ export class AuthService {
     });
   }
 
-  public async updateUser(user: User): Promise<User | null> {
+  public async updateUser(user: User): Promise<boolean> {
 
-    let resp: User | null = null;
+    let resp = false;
 
     try {
       const apiResp = this.apiService.updateUser(user);
