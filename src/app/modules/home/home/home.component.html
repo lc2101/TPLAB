@@ -8,14 +8,11 @@
     </div>
     <app-view-event [events]="events" (eventToDelete)="deleteEvent($event)"
      (ticketToBuy)="openBuyTicketDialog($event)" (eventToEdit)="openEditEventDialog($event)"></app-view-event>
-    <app-my-events [events]="events" [myEvents]="myEvents" >
-    </app-my-events>
+
     <div *ngIf="isPopupVisible" class="popup-overlay">
       <ng-container *ngTemplateOutlet="editEventDialog"></ng-container>
     </div>
   </div>
-
-  <app-footer></app-footer>
 
 <ng-template #editEventDialog>
   <h2 mat-dialog-title class="custom-dialog-title">Editar Evento</h2>

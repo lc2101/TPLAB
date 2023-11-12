@@ -13,6 +13,8 @@ export class ViewEventComponent {
   @Output() public eventToDelete: EventEmitter<number> = new EventEmitter();
   @Output() public eventToEdit: EventEmitter<Event> = new EventEmitter();
   @Output() public ticketToBuy: EventEmitter<Event> = new EventEmitter();
+
+  filterPost = '';
   
   constructor(private authService: AuthService){}
 

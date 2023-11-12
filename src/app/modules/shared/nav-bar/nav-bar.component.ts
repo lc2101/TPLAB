@@ -33,4 +33,8 @@ export class NavBarComponent {
   public goToHome() {
     this.router.navigate(['/home']);
   }
+
+  public goToMyEvents() {
+    this.router.navigate(['/my-events']);
+  }
 }

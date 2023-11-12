@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { BuyEventComponent } from './buy-event/buy-event.component';
 import { MyEventsComponent } from './my-events/my-events.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -22,7 +23,8 @@ import { MyEventsComponent } from './my-events/my-events.component';
     ReactiveFormsModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   exports: [
     AddEventComponent,

@@ -5,11 +5,28 @@
 }
 
 .container >*{
-    flex: 1 1 350px;
+    flex: 1 1 30%;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.buscador input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    box-sizing: border-box;
 }
 
 .event-card {
-    max-width: 350px;
+    max-width: 30%;
     margin: 5px;
     background-color: rgba(0, 0, 0, 0.5);
 }

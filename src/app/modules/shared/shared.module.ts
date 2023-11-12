@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -10,7 +10,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
   declarations: [
     NavBarComponent,
     FooterComponent,
-    SideBarComponent
+    FilterPipe
   ],
   imports: [
     CommonModule
@@ -18,7 +18,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
   exports: [
     NavBarComponent,
     FooterComponent,
-    SideBarComponent
+    FilterPipe
   ]
 })
 export class SharedModule { }

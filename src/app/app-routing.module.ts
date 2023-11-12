@@ -5,6 +5,7 @@ import { HomeComponent } from './modules/home/home/home.component';
 import { Error404Component } from './modules/standalones/error404/error404.component';
 import { authGuard } from './core/services/guard/auth-guard.service';
 import { ProfileComponent } from './modules/profile/profile/profile.component';
+import { MyEventsComponent } from './modules/events/my-events/my-events.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
     loadChildren: () => import("./modules/profile/profile.module").then(m => m.ProfileModule),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'my-events',
+    component: MyEventsComponent,
     canActivate: [authGuard]
   },
   {

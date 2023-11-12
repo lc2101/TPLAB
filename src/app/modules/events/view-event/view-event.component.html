@@ -1,42 +1,9 @@
-
-<!--
-<div>
-    <h2>Eventos</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th>Lugar</th>
-                <th>Descripcion</th>
-                <th>Categoria</th>
-                <th>Imagen</th>
-                <th>Tickets</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let event of events">
-                <td>{{event.name}}</td>
-                <td>{{event.date}}</td>
-                <td>{{event.hour}}</td>
-                <td>{{event.place}}</td>
-                <td>{{event.description}}</td>
-                <td>{{event.category}}</td>
-                <td>{{event.image}}</td>
-                <td>{{event.tickets}}</td>
-                <td><button (click)="editEvent(event!)">EDITAR</button></td>
-                <td><button (click)="deleteEvent(event.id!)">Eliminar</button></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p *ngIf="checkUser() === '2' ">Hola usuario</p>
+<div class="buscador">
+    <input type="text" name="filterPost" id="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
 </div>
--->
-
 <div class="container">
-    <mat-card class="event-card" *ngFor="let event of events">
+    
+    <mat-card class="event-card" *ngFor="let event of events | filter: filterPost">
         <img src="https://material.angular.io/assets/img/examples/shiba2.jpg">
         <mat-card-header class="header">
             <mat-card-title>{{event.name}}</mat-card-title>

@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container>* {
+    flex: 1 1 350px;
+}
+
+.div1,
+.div2 {
+    max-width: 350px;
+}
+
+.buscador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.buscador input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.my-event-card {
+    max-width: 350px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+    justify-content: right;
+    display: flex;
+}
+
+.ticket{
+    max-width: 50px;
+    max-height: 50px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+h1 {
+    margin: 0;
+    padding-top: 9.5px;
+    max-width: 100px;
+}

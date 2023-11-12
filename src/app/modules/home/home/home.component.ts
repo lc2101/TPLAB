@@ -27,7 +27,6 @@ export class HomeComponent {
   ngOnInit(): void {
     this.getEvents();
     this.getMyEvents();
-    
   }
 
   public async getEvents() {
@@ -43,6 +42,7 @@ export class HomeComponent {
       console.error(error);
     }
   }
+  
   public async getMyEvents() {
     try {
       let respApi = this.apiService.getTicketByUserId(Number(this.checkUser()));
@@ -116,9 +116,6 @@ export class HomeComponent {
       height: '500px',
       width: '500px',
     });
-
-   
-    
 
   }
 
