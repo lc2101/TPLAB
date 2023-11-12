@@ -45,7 +45,9 @@ export class ApiService {
   //! Events
   getEvents(): Observable<Event[]> {
     return this.http.get<Event[]>(`${this.baseURL}/events`);
-  }
+ }
+ 
+
 
   getEventByName(name: string): Observable<Event[]>{
     return this.http.get<Event[]>(`${this.baseURL}/events?name=${name}`);
@@ -68,5 +70,11 @@ export class ApiService {
   }
   addTicket(createTicket: Ticket): Observable<boolean> {
     return this.http.post<boolean>(`${this.baseURL}/tickets`, createTicket);
+  }
+  getTickets(): Observable<Ticket[]> {
+    return this.http.get<Ticket[]>(`${this.baseURL}/tickets`);
+ }
+  getTicketByUserId(id: number): Observable<Ticket[]>{
+  return this.http.get<Ticket[]>(`${this.baseURL}/tickets?idUser=${id}`);
   }
 }

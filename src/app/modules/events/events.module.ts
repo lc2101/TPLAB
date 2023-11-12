@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { BuyEventComponent } from './buy-event/buy-event.component';
+import { MyEventsComponent } from './my-events/my-events.component';
 
 
 
@@ -13,7 +14,8 @@ import { BuyEventComponent } from './buy-event/buy-event.component';
   declarations: [
     AddEventComponent,
     ViewEventComponent,
-    BuyEventComponent
+    BuyEventComponent,
+    MyEventsComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { BuyEventComponent } from './buy-event/buy-event.component';
   ],
   exports: [
     AddEventComponent,
-    ViewEventComponent
+    ViewEventComponent,
+    MyEventsComponent
   ]
 })
 export class EventsModule { }

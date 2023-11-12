@@ -1,7 +1,7 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { lastValueFrom } from 'rxjs';
-import { Event } from 'src/app/core/Models';
+import { Event, Ticket } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { BuyEventComponent } from '../../events/buy-event/buy-event.component';
@@ -16,6 +16,8 @@ export class HomeComponent {
   @ViewChild('editEventDialog', { static: false }) editEventDialog!: TemplateRef<any>;
   @ViewChild('buyEventDialog', { static: false }) buyEventDialog!: TemplateRef<any>;
   public events: Array<Event> = [];
+  public myEvents: Array<Ticket>=[];
+  
   public editEvent: Event = { id: 0, name: '', date: null, hour: null, place: '', description: '', category: '', image: '', tickets: 0};
   public isPopupVisible = false;
 
@@ -24,6 +26,8 @@ export class HomeComponent {
   
   ngOnInit(): void {
     this.getEvents();
+    this.getMyEvents();
+    
   }
 
   public async getEvents() {
@@ -34,6 +38,20 @@ export class HomeComponent {
       const data = await lastValueFrom(respApi);
 
       this.events = data.map((event: any) => new Event(event)); 
+      
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  public async getMyEvents() {
+    try {
+      let respApi = this.apiService.getTicketByUserId(Number(this.checkUser()));
+
+      const data = await lastValueFrom(respApi);
+
+      this.myEvents = data.map((ticket: any) => new Ticket(ticket)); 
+
+      
       
     } catch (error) {
       console.error(error);

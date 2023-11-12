@@ -1,0 +1,28 @@
+<div class="container"> 
+<mat-card class="ticket-card" *ngFor="let ticket of myEvents">
+        
+    <mat-card class="event-card" *ngFor="let event of events" >
+        <mat-card-actions *ngIf="ticket.idEvent === event.id">
+            <mat-card-header class="header">
+            <mat-card-title>{{event.name}}</mat-card-title>
+            <mat-card-subtitle>{{event.place}}</mat-card-subtitle>
+            <mat-card-subtitle>{{event.date}} - {{event.hour}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+            <p>
+                {{event.description}}
+            </p>
+
+        </mat-card-content>
+        <mat-card-footer>
+            <h1>Tienes {{ticket.ticketQ}} entradas</h1>
+        </mat-card-footer>
+
+        </mat-card-actions>
+        
+
+    </mat-card>
+    </mat-card>
+
+</div>
+
