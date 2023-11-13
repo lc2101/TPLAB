@@ -7,7 +7,7 @@
     <div *ngFor="let ticket of myEvents" class="div1">
         <div *ngFor="let event of events | filter: filterPost" class="div2">
             <mat-card class="my-event-card" *ngIf="ticket.idEvent === event.id">
-                <img src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                <img src={{event.image}}>
                 <mat-card-header class="header">
                 <mat-card-title>{{event.name}}</mat-card-title>
                 <mat-card-subtitle>{{event.place}}</mat-card-subtitle>

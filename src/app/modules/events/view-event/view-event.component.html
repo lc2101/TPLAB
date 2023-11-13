@@ -4,7 +4,7 @@
 <div class="container">
     
     <mat-card class="event-card" *ngFor="let event of events | filter: filterPost">
-        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+        <img src={{event.image}}>
         <mat-card-header class="header">
             <mat-card-title>{{event.name}}</mat-card-title>
             <mat-card-subtitle>{{event.place}}</mat-card-subtitle>

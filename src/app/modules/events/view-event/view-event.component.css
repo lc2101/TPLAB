@@ -2,13 +2,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.container >*{
+    padding-bottom: 300px;
+  }
+  
+  .container > * {
     flex: 1 1 30%;
-}
-
-.buscador {
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .buscador {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,20 +20,69 @@
     margin: 0 auto;
     padding: 10px;
     box-sizing: border-box;
-}
-
-.buscador input {
+  }
+  
+  .buscador input {
     width: calc(100% - 20px);
     padding: 8px;
     box-sizing: border-box;
-}
-
-.event-card {
+  }
+  .event-card {
     max-width: 30%;
     margin: 5px;
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-.buttons {
-    justify-content: right;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .event-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .mat-card-content {
+    text-align: center;
+    height: 150px;
+    overflow: hidden;
+  }
+  
+  .mat-card-content p {
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .mat-card-footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .buttons button {
+    margin: 5px;
+    background-color: rgb(158, 197, 155);
+    padding: 10px 60px;
+    border: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s linear;
+  }
+  
+  .buttons button:hover {
+    color: grey;
+    background-color: white;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+  }
+  
