@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
+
+  
 
     body {
         font-family: 'Arial', sans-serif;
@@ -10,6 +13,7 @@
         color: #fff;
         margin: 0;
         padding: 0;
+        
     }
 
         section button {
@@ -40,6 +44,7 @@
 
     .todo {
         background-color: #121212;
+        padding-bottom: 300px;
     }
 
         section {

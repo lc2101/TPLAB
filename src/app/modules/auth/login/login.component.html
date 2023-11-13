@@ -37,9 +37,11 @@
         </div>
         
         <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+        <button (click)="navigateToRegister()">Registrarse</button>
+        
     </form>
 
-    <p><a (click)="navigateToRegister()">Registrate aca</a></p>
+    
 </div>
 
 <app-footer></app-footer>
