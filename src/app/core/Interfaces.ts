@@ -5,12 +5,10 @@ export interface IUser {
   "userName": string;
   "email": string;
   "password": string;
-  "age": string;
   "dni": string;
   "birthDate": Date | null;
   "name": string;
   "lastName": string;
-  "suscription": string;
 }
 
 export interface ITicket {

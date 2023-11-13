@@ -34,7 +34,7 @@ export class RegisterComponent {
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-
+    this.calcularFechaHace18Anios();
 
   }
 
@@ -140,6 +140,20 @@ export class RegisterComponent {
     }
 
     return '';
+  }
+
+  public calcularFechaHace18Anios(): string {
+    let fechaActual = new Date();
+    let anioActual = fechaActual.getFullYear();
+    let mesActual = fechaActual.getMonth();
+    let diaActual = fechaActual.getDate();
+
+    let anioHace18 = anioActual - 18;
+    
+
+    const fechaHace18Anios = new Date(anioHace18, mesActual, diaActual);
+
+    return fechaHace18Anios.toISOString().split('T')[0];
   }
 
   
