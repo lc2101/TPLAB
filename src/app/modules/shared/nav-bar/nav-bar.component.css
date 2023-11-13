@@ -1,22 +1,28 @@
 nav {
-    background-color: #121212fa;
-    color: white;
+    background-color: #333;
+    color: #fff;
     padding: 10px;
+    display: flex;
+    
+    justify-content: space-between;
+    
+    align-items: center;
+    
 }
 
 nav h1 {
-    margin: 1;
+    margin: 0;
+    font-size: xx-large;
+    font-weight: bold;
     padding: 0;
-    display: flex;
-    justify-content: left;
 }
 
 nav ul {
     list-style: none;
-    margin: 1;
+    margin: 0;
+    
     padding: 0;
     display: flex;
-    justify-content: right;
 }
 
 nav li {
@@ -25,5 +31,5 @@ nav li {
 
 nav ul a {
     text-decoration: none;
-    color: white;
+    color: #fff;
 }

@@ -1,32 +1,36 @@
 <app-nav-bar [isUser]="false"></app-nav-bar>
 <body>
-  <div>
+  <div class="todo">
     <section class="principal">
       <h1>Obtén tus entradas para todo tipo de eventos</h1>
+      <button (click)="goToLogin()">Iniciar Sesion</button>
+      <button (click)="goToRegister()">Registrarse</button>
     </section>
 
     <section class="conciertos">
-      <div>
+      <div class="titulo">
         <h2>CONCIERTOS</h2>
       </div>
     </section>
 
     <section class="teatro">
-      <div>
+      <div class="titulo">
         <h2>TEATRO</h2>
       </div>
     </section>
 
     <section class="deportes">
-      <div>
+      <div class="titulo">
         <h2>DEPORTES</h2>
       </div>
     </section>
 
     <section class="conferencias">
-      <div>
+      <div class="titulo">
         <h2>CONFERENCIAS</h2>
       </div>
     </section>
   </div>
+<app-footer></app-footer>
 </body>
+

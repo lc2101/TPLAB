@@ -1,10 +1,36 @@
 footer {
-    background-color: #121212fa;
+    background-color: #333;
     color: #fff;
+    padding: 20px 0;
     text-align: center;
-    padding: 10px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    /* Asegura que el footer esté sobre otros elementos */
+}
+
+.footer-content {
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.footer-section {
+    max-width: 300px;
+    flex: 1;
+}
+
+.footer-section h2 {
+    color: #1DB954;
+    font-size: 1.5em;
+}
+
+.footer-section p {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-section img {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
 }
