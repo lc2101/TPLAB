@@ -59,7 +59,7 @@
         
             <label for="birthDate">Fecha de Nacimiento: </label>
         
-            <input type="date" id="birthDate" formControlName="birthDate"/>
+            <input type="date" id="birthDate" formControlName="birthDate" [max]="calcularFechaHace18Anios()"/>
 
             <div>
             

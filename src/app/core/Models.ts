@@ -7,24 +7,20 @@ export class User implements IUser {
   userName: string = '';
   email: string = '';
   password: string = '';
-  age: string = '';
   dni: string = '';
   birthDate: Date | null = null;
   name: string = '';
   lastName: string = '';
-  suscription: string = '';
 
   constructor(user?: any) {
     this.id = user.id != null ? user.id : null;
     this.userName = user.userName != undefined ? user.userName : undefined;
     this.email = user.email != undefined ? user.email : undefined;
     this.password = user.password != undefined ? user.password : undefined;
-    this.age = user.age != undefined ? user.age : undefined;
     this.dni = user.dni != undefined ? user.dni : undefined;
     this.birthDate = user.birthDate != null ? user.birthDate : null;
     this.name = user.name != undefined ? user.name : undefined;
     this.lastName = user.lastName != undefined ? user.lastName : undefined;
-    this.suscription = user.suscription != undefined ? user.suscription : undefined;
   }
 }
 
