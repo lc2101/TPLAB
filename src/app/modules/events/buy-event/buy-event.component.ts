@@ -27,12 +27,16 @@ private dialogRef: MatDialogRef<BuyEventComponent>, private authService:AuthServ
   }
 
   public buy() {
-    this.newTicket.idUser =  parseInt(this.checkUser());
-    this.newTicket.idEvent=this.theEvent.id;
-    this.newTicket.ticketQ = Number(this.ticketQ);
+    if ((this.theEvent.tickets! - this.ticketQ) >= 0) {
+      
+      this.newTicket.idUser =  parseInt(this.checkUser());
+      this.newTicket.idEvent= this.theEvent.id;
+      this.newTicket.ticketQ = this.ticketQ;
 
-
-    this.createTicket();
+      this.createTicket();
+    } else {
+      alert(`Quedan ${this.theEvent.tickets} entradas disponibles` );
+    }
   }
 
   public createTicket() {
