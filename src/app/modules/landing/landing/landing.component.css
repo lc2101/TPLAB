@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    /* Fondo oscuro característico de Spotify */
+    color: #fff;
+    /* Texto en blanco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Centra verticalmente en la pantalla completa */
+}
+
+div {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    /* Fondo oscuro adicional */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border-radius: 8px;
+    /* Bordes redondeados */
+}
+
+section {
+        margin-bottom: 30px;
+        /* Aumenta el espacio inferior entre secciones */
+        padding: 40px;
+        /* Aumenta el espacio interno de las secciones */
+        text-align: center;
+        position: relative;
+        /* Agregamos posición relativa para posicionar el contenido sobre el fondo */
+        color: #fff;
+        /* Ajustamos el color del texto para que sea visible en el fondo oscuro */
+        border-radius: 8px;
+        /* Bordes redondeados */}
+
+h1,
+h2,
+h3,
+h4 {
+    color: rgb(255, 255, 255);
+    /* Verde principal de Spotify para títulos */
+}
+
+h2 {
+    font-size: 32px;
+        /* Tamaño más grande para h4 */
+    font-weight: bold;
+        /* Texto en negrita para h4 */
+    margin-bottom: 10px;
+    display: inline;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+div>div {
+    border: 1px solid #363636;
+    /* Borde más oscuro */
+    padding: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+    /* Bordes redondeados para las imágenes */
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1DB954;
+    /* Verde principal de Spotify para botones */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    /* Bordes redondeados para botones */
+}
+
+/* Fondo para cada sección */
+
+
+
+.teatro {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDPkSFjx-aCZ_0YygnHl0c3dxUuO6Ke9IsAA&usqp=CAU');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #121212;
+}
+
+.conciertos{
+    background-image:url('https://thumbs.dreamstime.com/b/muchedumbre-en-el-concierto-festival-de-m%C3%BAsica-del-verano-89546129.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.deportes {
+    background-image: url('https://deportes.cba.gov.ar/wp-content/uploads/2022/02/kempes-2-8.4.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #121212;
+    /* Reemplazar con la URL de la imagen de fondo */
+}
+
+.conferencias {
+    background-image: url('https://www.seoptimer.com/storage/images/2022/09/event-de-marketing-digital.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #121212;
+    /* Reemplazar con la URL de la imagen de fondo */
+}
+
