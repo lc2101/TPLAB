@@ -21,12 +21,11 @@ export class HomeComponent {
   public editEvent: Event = { id: 0, name: '', date: null, hour: null, place: '', description: '', category: '', image: '', tickets: 0};
   public isPopupVisible = false;
 
-  constructor(private apiService: ApiService, private authService: AuthService,
-     private dialog: MatDialog) {}
+  constructor(private apiService: ApiService, private authService: AuthService, private dialog: MatDialog) {}
   
   ngOnInit(): void {
     this.getEvents();
-    this.getMyEvents();
+    /* this.getMyEvents(); */
   }
 
   public async getEvents() {
@@ -43,7 +42,7 @@ export class HomeComponent {
     }
   }
   
-  public async getMyEvents() {
+  /* public async getMyEvents() {
     try {
       let respApi = this.apiService.getTicketByUserId(Number(this.checkUser()));
 
@@ -51,12 +50,10 @@ export class HomeComponent {
 
       this.myEvents = data.map((ticket: any) => new Ticket(ticket)); 
 
-      
-      
     } catch (error) {
       console.error(error);
     }
-  }
+  } */
 
   public createEvent(event: Event) {
     this.apiService.addEvent(event).subscribe({

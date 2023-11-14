@@ -25,6 +25,16 @@
       "birthDate": "2001-02-09",
       "name": "Luciano",
       "lastName": "Croci"
+    },
+    {
+      "id": 4,
+      "userName": "roman_el10",
+      "email": "roman10@hotmail.com",
+      "password": "riquelmeCapo10",
+      "dni": "23343433",
+      "birthDate": "1986-06-10",
+      "name": "Juan Roman",
+      "lastName": "Riquelme"
     }
   ],
   "events": [
@@ -109,6 +119,36 @@
       "idUser": 3,
       "idEvent": 1,
       "ticketQ": 2
+    },
+    {
+      "id": 7,
+      "idUser": 4,
+      "idEvent": 1,
+      "ticketQ": 3
+    },
+    {
+      "id": 8,
+      "idUser": 4,
+      "idEvent": 4,
+      "ticketQ": 2
+    },
+    {
+      "id": 9,
+      "idUser": 4,
+      "idEvent": 4,
+      "ticketQ": 1
+    },
+    {
+      "id": 10,
+      "idUser": 4,
+      "idEvent": 1,
+      "ticketQ": 1
+    },
+    {
+      "id": 11,
+      "idUser": 4,
+      "idEvent": 3,
+      "ticketQ": 4
     }
   ]
 }

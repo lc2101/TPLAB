@@ -15,7 +15,7 @@ export class RegisterComponent {
 
   private dniPattern: RegExp = /^\d+$/; // solo permite numeros
 
-  private namePattern: RegExp = /^[A-Z][a-z]*$/; // solo letras
+  private namePattern: RegExp = /^[A-Z][a-z]*(?:\s[A-Z][a-z]*)*$/; // solo letras
 
   private passwordPattern: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]{6,}$/; //al menos una letra minuscula, una mayuscula y un numero. Permite caracteres especiales (opcional)
 
@@ -26,7 +26,7 @@ export class RegisterComponent {
     lastName: new FormControl('', [Validators.required, Validators.pattern(this.namePattern)]),
     birthDate: new FormControl('', [Validators.required]),
     userName: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    dni: new FormControl('',[Validators.required, Validators.pattern(this.dniPattern)]),
+    dni: new FormControl('',[Validators.required, Validators.pattern(this.dniPattern), Validators.minLength(7)]),
     email: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
     password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(this.passwordPattern)]),
   })
@@ -128,6 +128,8 @@ export class RegisterComponent {
           case 'required':
             return `${fieldType} requerido.`;
           case 'pattern':
+            return `${fieldType} inválido.`;
+          case 'minlength':
             return `${fieldType} inválido.`;
         }
         break;

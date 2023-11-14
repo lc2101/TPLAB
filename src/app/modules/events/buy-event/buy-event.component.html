@@ -23,12 +23,11 @@
                 <label for="ticketQ">Cantidad: </label>
         
                 <select name="ticketQ" id="ticketQ" [(ngModel)]="ticketQ" required>
-                    <option *ngFor="let value of ticketOptions" [value]="value">{{value}}</option>
+                    <option *ngFor="let value of getDisponibleTickets(theEvent.id!)" [value]="value">{{value}}</option>
                 </select>
                     <script></script>
-                <div class="buttons"> 
-                    
-                    <button id="buy" mat-button type="submit" disabled="{{ticketQ===0}}" >Comprar</button>
+                <div class="buttons">
+                    <button id="buy" mat-button type="submit" disabled="{{ticketQ < 1}}">Comprar</button>
                 </div>
 
             </form>

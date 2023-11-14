@@ -43,21 +43,19 @@ export class ApiService {
   }
 
   //! Events
-  getEvents(): Observable<Event[]> {
+  public getEvents(): Observable<Event[]> {
     return this.http.get<Event[]>(`${this.baseURL}/events`);
- }
- 
+  }
 
-
-  getEventByName(name: string): Observable<Event[]>{
+  public getEventByName(name: string): Observable<Event[]>{
     return this.http.get<Event[]>(`${this.baseURL}/events?name=${name}`);
   }
 
-  addEvent(createEvent: Event): Observable<boolean> {
+  public addEvent(createEvent: Event): Observable<boolean> {
     return this.http.post<boolean>(`${this.baseURL}/events`, createEvent);
   }
 
-  deleteEvent(id: number): Observable<boolean> {
+  public deleteEvent(id: number): Observable<boolean> {
     return this.http.delete(`${this.baseURL}/events/${id}`).
       pipe(
         map(resp => true),
@@ -65,16 +63,20 @@ export class ApiService {
       );
   }
 
-  editEvent(id: number, updateEvent: Event): Observable<boolean> {
+  public editEvent(id: number, updateEvent: Event): Observable<boolean> {
     return this.http.put<boolean>(`${this.baseURL}/events/${id}`, updateEvent);
   }
-  addTicket(createTicket: Ticket): Observable<boolean> {
+
+//! Tickets
+  public addTicket(createTicket: Ticket): Observable<boolean> {
     return this.http.post<boolean>(`${this.baseURL}/tickets`, createTicket);
   }
-  getTickets(): Observable<Ticket[]> {
+  
+  public getTickets(): Observable<Ticket[]> {
     return this.http.get<Ticket[]>(`${this.baseURL}/tickets`);
- }
-  getTicketByUserId(id: number): Observable<Ticket[]>{
-  return this.http.get<Ticket[]>(`${this.baseURL}/tickets?idUser=${id}`);
+  }
+  
+  public getTicketByUserId(id: number): Observable<Ticket[]>{
+    return this.http.get<Ticket[]>(`${this.baseURL}/tickets?idUser=${id}`);
   }
 }

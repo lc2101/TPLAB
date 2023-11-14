@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit{
     lastName: new FormControl(`${this.getUserData().lastName}`, [Validators.required, Validators.pattern(this.namePattern)]),
     birthDate: new FormControl(`${this.getUserData().birthDate}`, [Validators.required]),
     userName: new FormControl(`${this.getUserData().userName}`, [Validators.required, Validators.minLength(6)]),
-    dni: new FormControl(`${this.getUserData().dni}`, [Validators.required, Validators.pattern(this.dniPattern)]),
+    dni: new FormControl(`${this.getUserData().dni}`, [Validators.required, Validators.pattern(this.dniPattern), Validators.minLength(7)]),
     email: new FormControl(`${this.getUserData().email}`, [Validators.required, Validators.pattern(this.emailPattern)]),
     password: new FormControl(`${this.getUserData().password}`, [Validators.required, Validators.minLength(6), Validators.pattern(this.passwordPattern)]),
   })
@@ -116,6 +116,8 @@ export class ProfileComponent implements OnInit{
           case 'required':
             return `${fieldType} requerido.`;
           case 'pattern':
+            return `${fieldType} inválido.`;
+          case 'minlength':
             return `${fieldType} inválido.`;
         }
         break;

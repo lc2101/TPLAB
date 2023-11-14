@@ -92,6 +92,11 @@ button:disabled {
     cursor: not-allowed;
 }
 
+#buy {
+    color: #fff;
+}
+
 #cancel {
+    font-family: "Roboto", san-serif;
     margin-bottom: 10px;
 }

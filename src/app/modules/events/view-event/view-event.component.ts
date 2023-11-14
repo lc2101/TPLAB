@@ -1,6 +1,6 @@
 import { lastValueFrom } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Event, Ticket } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
 
@@ -9,10 +9,10 @@ import { ApiService } from 'src/app/core/services/api.service';
   templateUrl: './view-event.component.html',
   styleUrls: ['./view-event.component.css']
 })
-export class ViewEventComponent {
+export class ViewEventComponent implements OnInit{
 
   @Input() public events: Array<Event> = [];
-  public tickets: Array<Ticket> = [];
+  public MyTickets: Array<Ticket> = [];
   @Output() public eventToDelete: EventEmitter<number> = new EventEmitter();
   @Output() public eventToEdit: EventEmitter<Event> = new EventEmitter();
   @Output() public ticketToBuy: EventEmitter<Event> = new EventEmitter();
@@ -22,7 +22,7 @@ export class ViewEventComponent {
   constructor(private authService: AuthService, private apiService: ApiService){}
 
   ngOnInit(): void {
-    this.getMyEvents;
+    this.getMyEvents();
   }
 
   public deleteEvent(id: number) {
@@ -54,11 +54,17 @@ export class ViewEventComponent {
 
       const data = await lastValueFrom(respApi);
 
-      this.tickets = data.map((ticket: any) => new Ticket(ticket)); 
+      this.MyTickets = data.map((ticket: any) => new Ticket(ticket));
       
     } catch (error) {
       console.error(error);
     }
+  }
+
+  public getEventsWithTickets(idEvent: number) {
+    const hayTicket = this.MyTickets.filter(MyTicket => MyTicket.idEvent === idEvent && MyTicket.ticketQ! >= 4);
+    
+    return hayTicket.length > 0 ? true : false;
   }
 
 }
