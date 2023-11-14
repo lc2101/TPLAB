@@ -13,7 +13,7 @@ export class BuyEventComponent implements OnInit {
 
   public newTicket: Ticket = new Ticket({id:0});
   public theEvent: Event= new Event({id:0});
-  public ticketQ: number = 0;
+  public ticketQ: number= 0;
   public ticketOptions: Array<number> = [1, 2, 3, 4];
 
 constructor(@Inject(MAT_DIALOG_DATA) public data:any, private apiService : ApiService,
@@ -27,11 +27,16 @@ private dialogRef: MatDialogRef<BuyEventComponent>, private authService:AuthServ
   }
 
   public buy() {
-    if ((this.theEvent.tickets! - this.ticketQ) >= 0) {
+    
+    
+    
+    
+    if ((this.theEvent.tickets! - Number(this.ticketQ)) >= 0) {
+      
       
       this.newTicket.idUser =  parseInt(this.checkUser());
       this.newTicket.idEvent= this.theEvent.id;
-      this.newTicket.ticketQ = this.ticketQ;
+      this.newTicket.ticketQ = Number(this.ticketQ);
 
       this.createTicket();
     } else {

@@ -15,6 +15,16 @@
       "birthDate": "1994-10-29",
       "name": "Maxi",
       "lastName": "Gonzalez"
+    },
+    {
+      "id": 3,
+      "userName": "lc1234",
+      "email": "lc1234@gmail.com",
+      "password": "Lc1234",
+      "dni": "351354135",
+      "birthDate": "2001-02-09",
+      "name": "Luciano",
+      "lastName": "Croci"
     }
   ],
   "events": [
@@ -81,6 +91,24 @@
       "idUser": 2,
       "idEvent": 1,
       "ticketQ": 3
+    },
+    {
+      "id": 4,
+      "idUser": 3,
+      "idEvent": 3,
+      "ticketQ": "2"
+    },
+    {
+      "id": 5,
+      "idUser": 3,
+      "idEvent": 3,
+      "ticketQ": 2
+    },
+    {
+      "id": 6,
+      "idUser": 3,
+      "idEvent": 1,
+      "ticketQ": 2
     }
   ]
 }

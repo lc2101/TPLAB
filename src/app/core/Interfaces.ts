@@ -15,6 +15,7 @@ export interface ITicket {
   "id": number | null;
   "idUser": number | null;
   "idEvent": number | null;
+  "ticketQ": number |null;
 }
 
 export interface IEvent {

@@ -25,9 +25,10 @@
                 <select name="ticketQ" id="ticketQ" [(ngModel)]="ticketQ" required>
                     <option *ngFor="let value of ticketOptions" [value]="value">{{value}}</option>
                 </select>
-
+                    <script></script>
                 <div class="buttons"> 
-                    <button id="buy" type="submit" disabled="{{ticketQ===0}}">Comprar</button>
+                    
+                    <button id="buy" mat-button type="submit" disabled="{{ticketQ===0}}" >Comprar</button>
                 </div>
 
             </form>
