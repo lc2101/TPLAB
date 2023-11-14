@@ -17,7 +17,7 @@ export class HomeComponent {
   @ViewChild('buyEventDialog', { static: false }) buyEventDialog!: TemplateRef<any>;
   public events: Array<Event> = [];
   public myEvents: Array<Ticket>=[];
-  
+  public addEventTemplateBoolean = false;
   public editEvent: Event = { id: 0, name: '', date: null, hour: null, place: '', description: '', category: '', image: '', tickets: 0};
   public isPopupVisible = false;
 
@@ -61,6 +61,7 @@ export class HomeComponent {
   public createEvent(event: Event) {
     this.apiService.addEvent(event).subscribe({
       next: () => {
+        this.addEventTemplateBoolean = false;
         this.getEvents();
         alert("Evento creado con exito");
       },
@@ -83,7 +84,6 @@ export class HomeComponent {
    }
   
   public updateEvent() {
-    console.log(this.editEvent);
     this.apiService.editEvent(this.editEvent.id!, this.editEvent).subscribe({
       next: () => {
         this.closeDialog();
@@ -113,8 +113,8 @@ export class HomeComponent {
 
     const dialogRef = this.dialog.open(BuyEventComponent, {
       data:event,
-      height: '500px',
-      width: '500px',
+      height: '650px',
+      width: '650px',
     });
 
   }
@@ -125,5 +125,9 @@ export class HomeComponent {
 
   public checkUser() {
     return this.authService.checkAuthentication();
+  }
+
+  addEventTemplate() {
+    this.addEventTemplateBoolean = true;
   }
 }

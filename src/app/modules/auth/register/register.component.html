@@ -1,17 +1,16 @@
-<app-nav-bar [isUser]="false"></app-nav-bar>
 <body>
-    
+<app-nav-bar></app-nav-bar>
 
-<div>
+<div class="container">
     <h2>REGISTRO</h2>
 
     <form autocomplete="off" [formGroup]="registerForm" (ngSubmit)="userRegister()">
-        <div>
+        <div class="input">
         
             <label for="name">Nombre: </label>
         
             <input type="text" id="name" formControlName="name" placeholder="Ingrese su/s nombre/s"/>
-            <div>
+            <div class="span">
                 
                 <span *ngIf="isValidField('name')">
                     {{ getFieldError('name', 'nombre') }}
@@ -23,13 +22,13 @@
         
         </div>
 
-        <div>
+        <div class="input">
         
             <label for="lastName">Apellido: </label>
         
             <input type="text" id="lastName" formControlName="lastName" placeholder="Ingrese su/s apellido/s"/>
             
-            <div>
+            <div class="span">
             
                 <span *ngIf="isValidField('lastName')">
                     {{ getFieldError('lastName', 'apellido') }}
@@ -39,13 +38,13 @@
         
         </div>
 
-        <div>
+        <div class="input">
         
             <label for="dni">DNI: </label>
         
             <input type="text" id="dni" formControlName="dni" placeholder="Ingrese su nro de Documento"/>
             
-            <div>
+            <div class="span">
             
                 <span *ngIf="isValidField('dni')">
                     {{ getFieldError('dni', 'documento') }}
@@ -55,13 +54,13 @@
         
         </div>
 
-        <div>
+        <div class="input">
         
             <label for="birthDate">Fecha de Nacimiento: </label>
         
             <input type="date" id="birthDate" formControlName="birthDate" [max]="calcularFechaHace18Anios()"/>
 
-            <div>
+            <div class="span">
             
                 <span *ngIf="isValidField('birthDate')">
                     {{ getFieldError('birthDate', 'Fecha de nacimiento') }}
@@ -71,13 +70,13 @@
         
         </div>
 
-        <div>
+        <div class="input">
         
             <label for="userName">Usuario: </label>
         
             <input type="text" id="userName" formControlName="userName" placeholder="Ingrese su nombre de usuario"/>
             
-            <div>
+            <div class="span">
             
                 <span *ngIf="isValidField('userName')">
                     {{ getFieldError('userName', 'nombre de usuario') }}
@@ -87,13 +86,13 @@
         
         </div>
 
-        <div>
+        <div class="input">
 
             <label for="email">Email: </label>
 
             <input type="email" id="email" formControlName="email" placeholder="Ingrese su email"/>
             
-            <div>
+            <div class="span">
             
                 <span *ngIf="isValidField('email')">
                     {{ getFieldError('email', 'email') }}
@@ -103,13 +102,13 @@
 
         </div>
 
-        <div>
+        <div class="input">
 
             <label for="password">Contraseña: </label>
 
             <input type="password" id="password" formControlName="password" placeholder="Ingrese su contraseña"/>
 
-            <div>
+            <div class="span">
             
                 <span *ngIf="isValidField('password')">
                     {{ getFieldError('password', 'contraseña') }}
@@ -122,5 +121,6 @@
         <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
     </form>
 </div>
-</body>
+
 <app-footer></app-footer>
+</body>

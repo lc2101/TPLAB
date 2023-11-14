@@ -34,7 +34,15 @@ export class NavBarComponent {
     this.router.navigate(['/home']);
   }
 
+  public goToLanding() {
+    this.router.navigate(['/landing']);
+  }
+
   public goToMyEvents() {
     this.router.navigate(['/my-events']);
+  }
+
+  public checkUser() {
+    return this.authService.checkAuthentication()? true : false;
   }
 }

@@ -1,16 +1,34 @@
+body {
+    background-color: #333333;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #333333;
 }
 
 .container>* {
-    flex: 1 1 350px;
+    margin: 5px;
 }
 
 .div1,
 .div2 {
     max-width: 350px;
+    box-sizing: border-box;
+}
+
+.titulo {
+    color: #fff;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.subtitulo {
+    color: #fff;
+    font-size: large;
+    font-weight: light;
 }
 
 .buscador{
@@ -31,9 +49,11 @@
 }
 
 .my-event-card {
-    max-width: 350px;
+    max-width: 100%;
     margin: 5px;
     background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 10px;
 }
 
 .footer {
@@ -52,4 +72,10 @@ h1 {
     margin: 0;
     padding-top: 9.5px;
     max-width: 100px;
+}
+
+app-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

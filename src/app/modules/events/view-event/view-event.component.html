@@ -7,10 +7,10 @@
     <mat-card class="event-card" *ngFor="let event of events | filter: filterPost">
         <div *ngIf="event.tickets > 0 && event.date > fechaActual()">
             <img src={{event.image}}>
-            <mat-card-header class="header">
-                <mat-card-title>{{event.name}}</mat-card-title>
-                <mat-card-subtitle>{{event.place}}</mat-card-subtitle>
-                <mat-card-subtitle>{{event.date}} - {{event.hour}}</mat-card-subtitle>
+            <mat-card-header>
+                <mat-card-title class="titulo">{{event.name}}</mat-card-title>
+                <mat-card-subtitle class="subtitulo">{{event.place}}</mat-card-subtitle>
+                <mat-card-subtitle class="subtitulo">{{event.date}} - {{event.hour}}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
                 <p>

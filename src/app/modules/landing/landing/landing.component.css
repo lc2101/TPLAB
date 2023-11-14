@@ -5,92 +5,76 @@
     
 }
 
-  
+body {
+    background-color: #333333;
+    color: #fff;
+    margin: 0;
+    padding: 0;     
+}
 
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #121212;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-        
-    }
-
-        section button {
-            padding: 15px 30px;
-            /* Ajusta el padding para hacer los botones más grandes */
-            font-size: larger;
-            /* Tamaño de fuente más grande */
-            background-color: #1DB954;
-            /* Color verde característico de Spotify */
-            color: #fff;
-            /* Texto en blanco */
-            border: none;
-            /* Elimina el borde predeterminado */
-            border-radius: 8px;
-            /* Bordes redondeados */
-            cursor: pointer;
-            /* Cambia el cursor al pasar sobre el botón */
-            margin-top: 20px;
-            /* Espaciado superior para separar del título */
-            margin-left: 10px;
-        }
+section button {
+    padding: 15px 30px;     
+    font-size: larger;        
+    background-color: #1DB954;        
+    color: #fff;         
+    border: none;       
+    border-radius: 8px;        
+    cursor: pointer;      
+    margin-top: 20px;     
+    margin-left: 10px;
+}
     
-        /* Añadir hover para resaltar cuando se pasa el ratón sobre el botón */
-        section button:hover {
-            background-color: #169f40;
-            /* Cambia el color al pasar el ratón */
-        }
+        
+section button:hover {
+    background-color: #169f40;
+}
 
-    .todo {
-        background-color: #121212;
-        padding-bottom: 300px;
-    }
+.todo {
+    background-color: #333333;
+}
 
-        section {
-            padding: 200px 40px;
-            text-align: center;
-            height: 150px;
-        }
+section {
+    padding: 200px 40px;
+    text-align: center;
+    height: 150px;
+}
 
-        h1{
-            font-weight: bold;
-            font-size:xx-large;
-        }
+h1{
+    font-weight: bold;
+    font-size:xx-large;
+}
 
-    .titulo h2{
-        font-size: xx-large;
-        font-weight: bold;
-        margin-bottom: 10px;
-        display: inline;
-        border-radius: 8px;
-        padding: 10px;
-        background-color: rgba(18, 18, 18, 0.5);
-    }
+.titulo h2{
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(18, 18, 18, 0.5);
+}
 
-    .teatro,
-    .conciertos,
-    .deportes,
-    .conferencias {
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
+.teatro,
+.conciertos,
+.deportes,
+.conferencias {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
-    .teatro {
-        background-image: url('https://a.travel-assets.com/findyours-php/viewfinder/images/res40/255000/255765-Teatro-Grande-Brescia.jpg');
-    }
+.teatro {
+    background-image: url('https://a.travel-assets.com/findyours-php/viewfinder/images/res40/255000/255765-Teatro-Grande-Brescia.jpg');
+}
 
-    .conciertos {
-        /* background-image: url('https://thumbs.dreamstime.com/b/muchedumbre-en-el-concierto-festival-de-música-del-verano-89546129.jpg'); */
-        background-image: url('https://i0.wp.com/la-lista.com/wp-content/uploads/2022/09/cantantes-que-les-piden-a-sus-fana%CC%81ticos-no-grabarlos-en-sus-conciertos.jpg?fit=1024%2C576&ssl=1');
-    }
+.conciertos {
+    background-image: url('https://i0.wp.com/la-lista.com/wp-content/uploads/2022/09/cantantes-que-les-piden-a-sus-fana%CC%81ticos-no-grabarlos-en-sus-conciertos.jpg?fit=1024%2C576&ssl=1');
+}
 
-    .deportes {
-        background-image: url('https://deportes.cba.gov.ar/wp-content/uploads/2022/02/kempes-2-8.4.jpg');
-    }
+.deportes {
+    background-image: url('https://deportes.cba.gov.ar/wp-content/uploads/2022/02/kempes-2-8.4.jpg');
+}
 
-    .conferencias {
-        background-image: url('https://media.realinstitutoelcano.org/wp-content/uploads/2021/11/20190216-konferenz-saal-4458.jpg');
-        margin-bottom: 0;
-    }
+.conferencias {
+    background-image: url('https://media.realinstitutoelcano.org/wp-content/uploads/2021/11/20190216-konferenz-saal-4458.jpg');
+}

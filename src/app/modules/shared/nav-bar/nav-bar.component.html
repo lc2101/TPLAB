@@ -1,5 +1,5 @@
-<nav *ngIf="isUser">
-  <h1><a (click)="goToHome()">TICKETEA®</a></h1>
+<nav *ngIf="checkUser()">
+  <h1><a (click)="goToLanding()">TICKETEA®</a></h1>
     <ul>
       <li><a (click)="goToHome()">Home</a></li>
       <li><a (click)="goToProfile()">Mi Perfil</a></li>
@@ -8,7 +8,7 @@
     </ul>
 </nav>
  
-<nav *ngIf="!isUser" class="navbar">
+<nav *ngIf="!checkUser()" class="navbar">
   <h1><a (click)="goToHome()">TICKETEA ®</a></h1>
   <ul class="nav-links">
       <li><a (click)="goToLogin()">Iniciar Sesion</a></li>

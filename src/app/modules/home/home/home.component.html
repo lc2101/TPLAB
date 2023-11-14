@@ -1,10 +1,11 @@
-
-
-  <app-nav-bar [isUser]="true"></app-nav-bar>
-
-  <div>
+<body>
+  <app-nav-bar></app-nav-bar>
+  <div class="container">
     <div *ngIf="checkUser() === '1'">
-      <app-add-event (eventToCreate)="createEvent($event)" ></app-add-event>
+      <button class="add" (click)="addEventTemplate()">AGREGAR EVENTO NUEVO</button>
+    </div>
+    <div *ngIf="addEventTemplateBoolean === true">
+      <app-add-event (eventToCreate)="createEvent($event)"></app-add-event>
     </div>
     <app-view-event [events]="events" (eventToDelete)="deleteEvent($event)"
      (ticketToBuy)="openBuyTicketDialog($event)" (eventToEdit)="openEditEventDialog($event)"></app-view-event>
@@ -13,58 +14,61 @@
       <ng-container *ngTemplateOutlet="editEventDialog"></ng-container>
     </div>
   </div>
+  <app-footer></app-footer>
+</body>
+
 
 <ng-template #editEventDialog>
-  <h2 mat-dialog-title class="custom-dialog-title">Editar Evento</h2>
-  <div mat-dialog-content>
+  <div mat-dialog-content class="content">
+    <h2 mat-dialog-title class="custom-dialog-title">EDITAR EVENTO</h2>
     <form (ngSubmit)="updateEvent()" class="custom-form">
       
-      <div class="form-field">
+      <div class="input">
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" [value]="editEvent.name" [(ngModel)]="editEvent.name" required>
       </div>
 
-      <div>
+      <div class="input">
         <label for="date">Fecha: </label>
         <input type="date" id="date" name="date" [value]="editEvent.date" [(ngModel)]="editEvent.date" required/>
       </div>
       
-      <div>
+      <div class="input">
         <label for="hour">Hora: </label>
         <input type="time" id="hour" name="hour" [value]="editEvent.hour" [(ngModel)]="editEvent.hour" required />
       </div>
       
-      <div>
+      <div class="input">
         <label for="place">Lugar: </label>
         <input type="text" id="place" name="place" [value]="editEvent.place" [(ngModel)]="editEvent.place" required />
       </div>
       
-      <div>
+      <div class="input">
         <label for="description">Descripcion: </label>
         <input type="textarea" id="description" name="description" [value]="editEvent.description" [(ngModel)]="editEvent.description" required />
       </div>
       
-      <div>
+      <div class="input">
         <label for="category">Categoria: </label>
         <input type="text" id="category" name="category" [value]="editEvent.category" [(ngModel)]="editEvent.category" required />
       </div>
       
-      <div>
+      <div class="input">
         <label for="image">Imagen: </label>
         <input type="text" id="image" name="image" [value]="editEvent.image" [(ngModel)]="editEvent.image" required />
       </div>
       
-      <div>
+      <div class="input">
         <label for="tickets">Cantidad de tickets: </label>
         <input type="number" id="tickets" name="tickets" [value]="editEvent.tickets" [(ngModel)]="editEvent.tickets" required />
       </div>
 
-      <button type="submit" class="custom-button">Guardar Cambios</button>
+      <div class="buttons">
+        <button id="save" type="submit">Guardar Cambios</button>
+      </div>
     </form>
-    <div mat-dialog-actions>
-      <button mat-button (click)="closeDialog()" class="custom-button">Cancelar</button>
+    <div class="buttons">
+      <button id="cancel" (click)="closeDialog()">Cancelar</button>
     </div>
   </div>
 </ng-template>
-
-<app-footer></app-footer>

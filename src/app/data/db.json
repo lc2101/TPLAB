@@ -11,30 +11,8 @@
       "userName": "123max",
       "email": "maxigf95@gmail.com",
       "password": "123Maxi",
-      "age": null,
       "dni": "123123",
-      "birthDate": "2023-10-29",
-      "name": "Maxi",
-      "lastName": "Gonzalez",
-      "suscription": null
-    },
-    {
-      "id": 3,
-      "userName": "123maxi",
-      "email": "maxi.12@gmail.com",
-      "password": "123Maxi",
-      "dni": "1231235",
-      "birthDate": "2023-10-29",
-      "name": "Maxi",
-      "lastName": "Gonzalez"
-    },
-    {
-      "id": 4,
-      "userName": "dfddf123",
-      "email": "maxi@gmail.com",
-      "password": "J123asd",
-      "dni": "4321",
-      "birthDate": "2023-11-13",
+      "birthDate": "1994-10-29",
       "name": "Maxi",
       "lastName": "Gonzalez"
     }
@@ -43,10 +21,10 @@
     {
       "id": 1,
       "name": "Final Copa Argentina 2023",
-      "date": "23/11/2023",
+      "date": "2023-11-23",
       "hour": "21:15",
       "place": "Mendoza",
-      "description": "Final entre Sarmiento y Central Cordoba",
+      "description": "Final entre Talleres y Boca Juniors",
       "category": "Futbol",
       "image": "https://www.ole.com.ar/images/2023/10/11/z8SChssGR_1290x760__1.jpg",
       "tickets": 25000
@@ -103,12 +81,6 @@
       "idUser": 2,
       "idEvent": 1,
       "ticketQ": 3
-    },
-    {
-      "id": 4,
-      "idUser": 2,
-      "idEvent": 1,
-      "ticketQ": 2
     }
   ]
 }

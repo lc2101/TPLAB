@@ -1,4 +1,5 @@
-<app-nav-bar [isUser]="true"></app-nav-bar>
+<body>
+<app-nav-bar></app-nav-bar>
 
 <div class="buscador">
     <input type="text" name="filterPost" id="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
@@ -9,9 +10,9 @@
             <mat-card class="my-event-card" *ngIf="ticket.idEvent === event.id">
                 <img src={{event.image}}>
                 <mat-card-header class="header">
-                <mat-card-title>{{event.name}}</mat-card-title>
-                <mat-card-subtitle>{{event.place}}</mat-card-subtitle>
-                <mat-card-subtitle>{{event.date}} - {{event.hour}}</mat-card-subtitle>
+                    <mat-card-title class="titulo">{{event.name}}</mat-card-title>
+                    <mat-card-subtitle class="subtitulo">{{event.place}}</mat-card-subtitle>
+                    <mat-card-subtitle class="subtitulo">{{event.date}} - {{event.hour}}</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
                 <p>
@@ -29,4 +30,5 @@
 </div>
 
 <app-footer></app-footer>
+</body>
 

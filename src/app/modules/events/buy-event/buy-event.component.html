@@ -1,41 +1,41 @@
+<body>
+    <div class="container">
+        <h2 mat-dialog-title class="titulo">COMPRAR ENTRADAS</h2>
 
-<div class="container">
-    <h2 mat-dialog-title class="custom-dialog-title">Comprar entradas</h2>
+        <div mat-dialog-content class="card-container">
 
-  
-    <div mat-dialog-content>
-        <mat-card class="event-card">
-        <img src={{theEvent.image}}>
-        <mat-card-header class="header">
-            <mat-card-title>{{theEvent.name}}</mat-card-title>
-            <mat-card-subtitle>{{theEvent.place}}</mat-card-subtitle>
-            <mat-card-subtitle>{{theEvent.date}} - {{theEvent.hour}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-            <p>
-                {{theEvent.description}}
-            </p>
-        </mat-card-content>
+            <mat-card class="event-card">
+                <img src={{theEvent.image}}>
+                <mat-card-header>
+                    <mat-card-title>{{theEvent.name}}</mat-card-title>
+                    <mat-card-subtitle class="subtitulo">{{theEvent.place}}</mat-card-subtitle>
+                    <mat-card-subtitle class="subtitulo">{{theEvent.date}} - {{theEvent.hour}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>
+                        {{theEvent.description}}
+                    </p>
+                </mat-card-content>
+            </mat-card>
+
+            <form (ngSubmit)="buy()">
+
+                <label for="ticketQ">Cantidad: </label>
         
-    </mat-card>
-    <form (ngSubmit)="buy()" class="custom-form">
-      
-            
-        <select name="ticketQ" id="ticketQ" [(ngModel)]="ticketQ" required>
-            <option *ngFor="let value of ticketOptions" [value]="value">{{value}}</option>
-        </select>
+                <select name="ticketQ" id="ticketQ" [(ngModel)]="ticketQ" required>
+                    <option *ngFor="let value of ticketOptions" [value]="value">{{value}}</option>
+                </select>
 
-        
+                <div class="buttons"> 
+                    <button id="buy" type="submit" disabled="{{ticketQ===0}}">Comprar</button>
+                </div>
 
-      <div mat-dialog-actions>
-        
-       <button mat-button type="submit" class="custom-button" disabled="{{ticketQ===0}}">Comprar</button>
-       
+            </form>
+
+            <div class="buttons">
+                <button id="cancel" (click)="closeDialog()">Cancelar</button>
+            </div>
+        </div>
     </div>
-
- </form>
- <div mat-dialog-actions>
- <button mat-button (click)="closeDialog()" class="custom-button">Cancelar</button>
-    </div>
-</div>
+</body>
 

@@ -1,10 +1,12 @@
-<app-nav-bar [isUser]="false"></app-nav-bar>
 <body>
+<app-nav-bar></app-nav-bar>
   <div class="todo">
     <section class="principal">
       <h1>Obtén tus entradas para todo tipo de eventos</h1>
-      <button (click)="goToLogin()">Iniciar Sesion</button>
-      <button (click)="goToRegister()">Registrarse</button>
+      <button *ngIf="!checkUser()" (click)="goToLogin()">Iniciar Sesion</button>
+      <button *ngIf="!checkUser()" (click)="goToRegister()">Registrarse</button>
+      <button *ngIf="checkUser()" (click)="goToHome()">Iniciar Sesion</button>
+      <button *ngIf="checkUser()" (click)="goToHome()">Registrarse</button>
     </section>
 
     <section class="conciertos">

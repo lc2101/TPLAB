@@ -1,16 +1,17 @@
-<app-nav-bar [isUser]="false"></app-nav-bar>
+<body>
+<app-nav-bar></app-nav-bar>
 
-<div>
-    <h2>Iniciar Sesión</h2>
+<div class="container">
+    <h2>INICIAR SESIÓN</h2>
 
     <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="checkAuth()">
-        <div>
+        <div class="input">
         
             <label for="email">Email: </label>
         
             <input type="email" formControlName="email" placeholder="Ingrese su email" />
         
-            <div>
+            <div class="span">
         
                 <span *ngIf="isValidField('email')">
                     {{ getFieldError('email', 'email') }}
@@ -20,13 +21,13 @@
         
         </div>
         
-        <div>
+        <div class="input">
         
             <label for="password">Contraseña: </label>
         
             <input type="password" formControlName="password" placeholder="Ingrese su contraseña" />
         
-            <div>
+            <div class="span">
         
                 <span *ngIf="isValidField('password')">
                     {{ getFieldError('password', 'contraseña') }}
@@ -43,5 +44,6 @@
 
     
 </div>
-
 <app-footer></app-footer>
+</body>
+
