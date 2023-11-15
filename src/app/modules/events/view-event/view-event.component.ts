@@ -12,6 +12,7 @@ import { ApiService } from 'src/app/core/services/api.service';
 export class ViewEventComponent implements OnInit{
 
   @Input() public events: Array<Event> = [];
+  public category:string='';
   public MyTickets: Array<Ticket> = [];
   @Output() public eventToDelete: EventEmitter<number> = new EventEmitter();
   @Output() public eventToEdit: EventEmitter<Event> = new EventEmitter();
@@ -66,5 +67,6 @@ export class ViewEventComponent implements OnInit{
     
     return hayTicket.length > 0 ? true : false;
   }
+  
 
 }

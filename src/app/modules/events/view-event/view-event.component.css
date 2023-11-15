@@ -32,12 +32,14 @@
     margin: 0 auto;
     padding: 10px;
     box-sizing: border-box;
+    height: 40px;
   }
   
   .buscador input {
     width: calc(100% - 20px);
     padding: 8px;
     box-sizing: border-box;
+    height: 40px;
   }
 
   .event-card {
@@ -87,4 +89,14 @@
     background-color: white;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
   }
-  
+  #category {
+    width: calc(100% - 20px);
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: larger;
+    height: 40px;
+}
+.buscador,
+#category {
+    height: 40px;
+}

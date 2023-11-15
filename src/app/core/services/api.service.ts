@@ -50,6 +50,7 @@ export class ApiService {
   public getEventByName(name: string): Observable<Event[]>{
     return this.http.get<Event[]>(`${this.baseURL}/events?name=${name}`);
   }
+ 
 
   public addEvent(createEvent: Event): Observable<boolean> {
     return this.http.post<boolean>(`${this.baseURL}/events`, createEvent);
