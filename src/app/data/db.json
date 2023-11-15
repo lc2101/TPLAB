@@ -124,31 +124,7 @@
       "id": 7,
       "idUser": 4,
       "idEvent": 1,
-      "ticketQ": 3
-    },
-    {
-      "id": 8,
-      "idUser": 4,
-      "idEvent": 4,
-      "ticketQ": 2
-    },
-    {
-      "id": 9,
-      "idUser": 4,
-      "idEvent": 4,
       "ticketQ": 1
-    },
-    {
-      "id": 10,
-      "idUser": 4,
-      "idEvent": 1,
-      "ticketQ": 1
-    },
-    {
-      "id": 11,
-      "idUser": 4,
-      "idEvent": 3,
-      "ticketQ": 4
     }
   ]
 }

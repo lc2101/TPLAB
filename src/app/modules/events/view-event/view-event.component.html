@@ -22,7 +22,7 @@
                     <button mat-button (click)="editEvent(event!)">EDITAR</button>
                     <button mat-button (click)="deleteEvent(event.id!)">ELIMINAR</button>
                 </mat-card-actions>
-                <mat-card-actions class="buttons" *ngIf="checkUser() !== '1'  && !getEventsWithTickets(event.id)">
+                <mat-card-actions class="buttons" *ngIf="checkUser() !== '1'  && getEventsWithTickets(event.id) > 0">
                     <button mat-button (click)="buyTicket(event!)">COMPRAR</button>
                 </mat-card-actions>
             </mat-card-footer>

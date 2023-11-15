@@ -67,6 +67,10 @@ export class ApiService {
     return this.http.put<boolean>(`${this.baseURL}/events/${id}`, updateEvent);
   }
 
+  public editEventTickets(event: Event, updatedTickets: number): Observable<boolean> {
+    return this.http.patch<boolean>(`${this.baseURL}/events/${event.id}`, { tickets: updatedTickets });
+  }
+
 //! Tickets
   public addTicket(createTicket: Ticket): Observable<boolean> {
     return this.http.post<boolean>(`${this.baseURL}/tickets`, createTicket);
