@@ -80,7 +80,7 @@
       "description": "Eras Tour",
       "category": "Concierto",
       "image": "https://cnnespanol.cnn.com/wp-content/uploads/2023/11/231110155523-taylor-swift-argentina-1109-restricted.jpg?quality=100&strip=info",
-      "tickets": 20000
+      "tickets": 19998
     }
   ],
   "tickets": [
@@ -125,6 +125,12 @@
       "idUser": 4,
       "idEvent": 1,
       "ticketQ": 1
+    },
+    {
+      "id": 8,
+      "idUser": 4,
+      "idEvent": 4,
+      "ticketQ": 2
     }
   ]
 }

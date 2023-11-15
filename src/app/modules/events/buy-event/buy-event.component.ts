@@ -23,20 +23,31 @@ constructor(@Inject(MAT_DIALOG_DATA) public data:any, private apiService : ApiSe
 
   
   ngOnInit(): void {
-    this.theEvent = this.data
+    this.theEvent = structuredClone(this.data);
     this.getMyTickets();
   }
 
-  public buy() {
+  public async buy() {
     
     if ((this.theEvent.tickets! - Number(this.ticketQ)) >= 0) {
       if (confirm(`Esta seguro que desea comprar ${this.ticketQ} entradas?`)) {
-      
-        this.newTicket.idUser = parseInt(this.checkUser());
-        this.newTicket.idEvent = this.theEvent.id;
-        this.newTicket.ticketQ = Number(this.ticketQ);
+        
+        this.theEvent.tickets! -= Number(this.ticketQ);
+        this.apiService.editEvent(this.theEvent.id!, this.theEvent).subscribe({
 
-        this.createTicket();
+          next: () => {
+            this.newTicket.idUser = parseInt(this.checkUser());
+            this.newTicket.idEvent = this.theEvent.id;
+            this.newTicket.ticketQ = Number(this.ticketQ);
+
+            this.createTicket();
+          },
+          error: () => {
+            alert("No se ha podido realizar la operacion");
+          }
+        })
+
+        
       }
     } else {
       alert(`Quedan ${this.theEvent.tickets} entradas disponibles` );
