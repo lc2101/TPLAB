@@ -10,10 +10,11 @@
     </select>
    
 </div>
-<div class="container">
+<div class="container" >
     
-    <mat-card class="event-card" *ngFor="let event of events | filter: filterPost||category">
-        <div *ngIf="event.tickets > 0 && event.date > fechaActual()">
+    <div class="event-card" *ngFor="let event of events | filter: filterPost||category">
+        
+        
             <img src={{event.image}}>
             <mat-card-header>
                 <mat-card-title class="titulo">{{event.name}}</mat-card-title>
@@ -34,8 +35,8 @@
                     <button mat-button (click)="buyTicket(event!)">COMPRAR</button>
                 </mat-card-actions>
             </mat-card-footer>
-        </div>
-    </mat-card>
+        
+    </div>
 </div>
 </body>
 

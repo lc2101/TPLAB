@@ -54,7 +54,13 @@ export class HomeComponent {
       console.error(error);
     }
   } */
+  public sameEvent(date: Date, nombre:string)
+  {
+    const evento=this.events.find((event)=>
+    {return event.name==nombre && event.date==date});
+    return evento;
 
+  }
   public createEvent(event: Event) {
     this.apiService.addEvent(event).subscribe({
       next: () => {
