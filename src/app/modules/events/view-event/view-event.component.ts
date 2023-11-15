@@ -62,10 +62,21 @@ export class ViewEventComponent implements OnInit{
     }
   }
 
-  public getEventsWithTickets(idEvent: number) {
-    const hayTicket = this.MyTickets.filter(MyTicket => MyTicket.idEvent === idEvent && MyTicket.ticketQ! >= 4);
+  public getEventsWithTickets(idEvent: number): number {
+    const hayTicket = this.MyTickets.filter(MyTicket => MyTicket.idEvent === idEvent);
+    let disponibleTickets = 4;
+    let purchasedTickets = 0;
     
-    return hayTicket.length > 0 ? true : false;
+    if (hayTicket.length > 0) {
+      const arregloTicketQ = hayTicket.map(ticket => ticket.ticketQ!);
+      for (const ticketQ of arregloTicketQ) {
+        purchasedTickets += ticketQ;
+      }
+    }
+
+    disponibleTickets -= purchasedTickets;
+
+    return disponibleTickets;
   }
   
 
