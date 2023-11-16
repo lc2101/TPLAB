@@ -35,6 +35,16 @@
       "birthDate": "1986-06-10",
       "name": "Juan Roman",
       "lastName": "Riquelme"
+    },
+    {
+      "id": 5,
+      "userName": "Ml1985",
+      "email": "ml@gmail.com",
+      "password": "Ml1234",
+      "dni": "431638416",
+      "birthDate": "1985-05-12",
+      "name": "Mariano",
+      "lastName": "Lopez"
     }
   ],
   "events": [
@@ -80,7 +90,95 @@
       "description": "Eras Tour",
       "category": "Conciertos",
       "image": "https://cnnespanol.cnn.com/wp-content/uploads/2023/11/231110155523-taylor-swift-argentina-1109-restricted.jpg?quality=100&strip=info",
+      "tickets": 19993
+    },
+    {
+      "id": 5,
+      "name": "Tan Bionica",
+      "date": "2024-01-20",
+      "hour": "21:00",
+      "place": "Estadio Jose Minella",
+      "description": "La ultima noche magica",
+      "category": "Conciertos",
+      "image": "https://cdn.getcrowder.com/images/decd0879-4a6f-415f-ab5b-86ceb38da48c-tbtour-mdq1920x720.png",
+      "tickets": 2000
+    },
+    {
+      "id": 6,
+      "name": "Escenas de la vida conyugal",
+      "date": "2024-01-31",
+      "hour": "20:00",
+      "place": "Teatro Corrientes",
+      "description": "Ricardo Darin y Andrea Pietra",
+      "category": "Deatro",
+      "image": "https://1.bp.blogspot.com/-4rvNANESffY/XYCQjGVS1NI/AAAAAAAARK8/ZCt5XP8_R78URpeFSiUgaYgXbcsNSV-4gCLcBGAsYHQ/s1600/TEATRO-MADRID-Escenas_de_la_vida_conyugal-TEATROS-DEL-CANAL-1-390x560.jpg",
+      "tickets": 500
+    },
+    {
+      "id": 7,
+      "name": "Argentina - Haiti amistoso",
+      "date": "2024-03-20",
+      "hour": "21:30",
+      "place": "Estadio Bicentenario San Juan",
+      "description": "Partido amistoso Copa San Juan",
+      "category": "Deportes",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeCGReomfLw47p9YwqT1xFngeZbju_hv6rIA&usqp=CAU",
+      "tickets": 10000
+    },
+    {
+      "id": 8,
+      "name": "Casados con Hijos",
+      "date": "2024-01-15",
+      "hour": "22:00",
+      "place": "Teatro Roxy",
+      "description": "Los Argento en el Teatro",
+      "category": "Deatro",
+      "image": "https://cdn.elobservador.com.uy/042021/1618845574439.jpg",
+      "tickets": 399
+    },
+    {
+      "id": 9,
+      "name": "La Boheme",
+      "date": "2024-07-20",
+      "hour": "21:00",
+      "place": "Teatro Colon",
+      "description": "Opera clasica de Murger y Barriere",
+      "category": "Deatro",
+      "image": "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/10/10152642/La-Boheme-2018-General-7.jpg",
+      "tickets": 4000
+    },
+    {
+      "id": 10,
+      "name": "Charla Ted con Gabriel Batistuta",
+      "date": "2023-12-15",
+      "hour": "18:00",
+      "place": "Movistar Arena",
+      "description": "El futbol y la superacion",
+      "category": "Conferencias",
+      "image": "https://media.ambito.com/p/b0babcc1a49785d03c01fd5170172f57/adjuntos/239/imagenes/039/452/0039452349/batistutajpg.jpg",
+      "tickets": 9996
+    },
+    {
+      "id": 11,
+      "name": "Argentina Brasil Americup",
+      "date": "2023-11-25",
+      "hour": "20:00",
+      "place": "Estadio Polideportivo",
+      "description": "Final de la Americup",
+      "category": "Deportes",
+      "image": "https://www.telam.com.ar/thumbs/bluesteel/advf/imagenes/2022/09/631e90a65af6b_450.jpg",
       "tickets": 19998
+    },
+    {
+      "id": 12,
+      "name": "La Matematica con Paenza",
+      "date": "2023-12-07",
+      "hour": "17:00",
+      "place": "Facultad Ciencias Exactas",
+      "description": "Evaluacion de la Matematica actual y del futuro",
+      "category": "Conferencias",
+      "image": "data:image/jpeg;base64,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",
+      "tickets": 200
     }
   ],
   "tickets": [
@@ -131,6 +229,36 @@
       "idUser": 4,
       "idEvent": 4,
       "ticketQ": 2
+    },
+    {
+      "id": 9,
+      "idUser": 2,
+      "idEvent": 4,
+      "ticketQ": 2
+    },
+    {
+      "id": 10,
+      "idUser": 5,
+      "idEvent": 4,
+      "ticketQ": 3
+    },
+    {
+      "id": 11,
+      "idUser": 5,
+      "idEvent": 10,
+      "ticketQ": 4
+    },
+    {
+      "id": 12,
+      "idUser": 5,
+      "idEvent": 11,
+      "ticketQ": 2
+    },
+    {
+      "id": 13,
+      "idUser": 5,
+      "idEvent": 8,
+      "ticketQ": 1
     }
   ]
 }

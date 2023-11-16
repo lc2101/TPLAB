@@ -121,6 +121,10 @@ constructor(@Inject(MAT_DIALOG_DATA) public data:any, private apiService : ApiSe
         disponibleTickets = [0, 1];
         return disponibleTickets;
         break;
+      case 4:
+      disponibleTickets = [0];
+      return disponibleTickets;
+      break;
     }
 
     return disponibleTickets;
