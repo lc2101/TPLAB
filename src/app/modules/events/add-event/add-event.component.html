@@ -88,7 +88,13 @@
 
             <label for="category">Categoria: </label>
 
-            <input type="text" id="category" formControlName="category" placeholder="Categoria del evento"/>
+            <select name="category" id="category" formControlName="category" placeholder="Categoria del evento">
+                <option value="">--</option>
+                <option value="Conciertos">Conciertos</option>
+                <option value="Deportes">Deportes</option>
+                <option value="Deatro">Teatro</option>
+                <option value="Conferencias">Conferencias</option>
+            </select>
 
             <div class="span">
 

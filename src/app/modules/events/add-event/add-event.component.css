@@ -45,6 +45,14 @@ input {
   align-items: center;
 }
 
+select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px;
+  text-align: center;
+}
+
 .span {
   margin-top: 5px;
   text-align: center;

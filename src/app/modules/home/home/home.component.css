@@ -114,10 +114,4 @@ button:disabled {
 .add {
   margin-top: 10px;
 }
-
-app-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
   

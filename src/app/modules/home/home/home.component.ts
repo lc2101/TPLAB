@@ -25,7 +25,6 @@ export class HomeComponent {
   
   ngOnInit(): void {
     this.getEvents();
-    /* this.getMyEvents(); */
   }
 
   public async getEvents() {
@@ -42,36 +41,27 @@ export class HomeComponent {
     }
   }
   
-  /* public async getMyEvents() {
-    try {
-      let respApi = this.apiService.getTicketByUserId(Number(this.checkUser()));
-
-      const data = await lastValueFrom(respApi);
-
-      this.myEvents = data.map((ticket: any) => new Ticket(ticket)); 
-
-    } catch (error) {
-      console.error(error);
-    }
-  } */
   public sameEvent(date: Date, nombre:string)
   {
-    const evento=this.events.find((event)=>
-    {return event.name==nombre && event.date==date});
+    const evento = this.events.find((event) => event.name.toLowerCase()==nombre.toLowerCase() && event.date==date);
     return evento;
-
   }
+
   public createEvent(event: Event) {
-    this.apiService.addEvent(event).subscribe({
-      next: () => {
-        this.addEventTemplateBoolean = false;
-        this.getEvents();
-        alert("Evento creado con exito");
-      },
-      error: () => {
-        alert("No se ha podido crear el evento");
-      }
-    })
+    if (this.sameEvent(event.date!, event.name) === undefined) {
+      this.apiService.addEvent(event).subscribe({
+        next: () => {
+          this.addEventTemplateBoolean = false;
+          this.getEvents();
+          alert("Evento creado con exito");
+        },
+        error: () => {
+          alert("No se ha podido crear el evento");
+        }
+      })
+    } else {
+      alert("Ya existe ese evento en la base de datos");
+    }
   }
 
   public deleteEvent(id: number) {
@@ -118,6 +108,12 @@ export class HomeComponent {
       data:event,
       height: '650px',
       width: '650px',
+    });
+
+    dialogRef.afterClosed().subscribe((result: Event | undefined) => {
+      if (result) {
+        console.log(result);
+      }
     });
 
   }

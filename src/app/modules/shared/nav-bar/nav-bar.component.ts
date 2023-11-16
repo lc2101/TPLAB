@@ -25,7 +25,11 @@ export class NavBarComponent {
     this.router.navigate(["/profile"]);
   }
 
-  public logout() {
+  public goToRegister() {
+    this.router.navigate(['/auth/register']);
+  }
+
+  public logOut() {
     this.authService.logout();
     this.router.navigate(['']);
   }
