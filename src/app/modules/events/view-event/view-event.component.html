@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
 <div class="buscador">
     <input type="text" name="filterPost" id="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
     <select name="catagory" id="category" [(ngModel)]="category">
@@ -41,3 +41,39 @@
 </body>
 
 
+ -->
+<body>
+    <div class="buscador">
+        <input type="text" name="filterPost" id="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
+        <select name="catagory" id="category" [(ngModel)]="category">
+            <option value="">--</option>
+            <option value="Conciertos">Conciertos</option>
+            <option value="Deportes">Deportes</option>
+            <option value="Deatro">Teatro</option>
+            <option value="Conferencias">Conferencias</option>
+        </select>
+    </div>
+    <div class="container">
+
+        <mat-card class="event-card" *ngFor="let event of events | filter: filterPost || category">
+            <div *ngIf="event.tickets > 0 && event.date > fechaActual()">
+                <img src={{event.image}}>
+                    <mat-card-header>
+                        <mat-card-title class="titulo">{{event.name}}</mat-card-title>
+                        <mat-card-subtitle class="subtitulo">{{event.place}}</mat-card-subtitle>
+                        <mat-card-subtitle class="subtitulo">{{event.date}} - {{event.hour}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-footer>
+                        <mat-card-actions class="buttons" *ngIf="checkUser() === '1';">
+                            <button mat-button (click)="editEvent(event!)">EDITAR</button>
+                            <button mat-button (click)="deleteEvent(event.id!)">ELIMINAR</button>
+                        </mat-card-actions>
+                        <mat-card-actions class="buttons" *ngIf="checkUser() !== '1';">
+                            <button mat-button (click)="buyTicket(event!)">COMPRAR</button>
+
+                        </mat-card-actions>
+                    </mat-card-footer>
+            </div>
+        </mat-card>
+    </div>
+</body>

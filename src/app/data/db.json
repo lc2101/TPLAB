@@ -45,7 +45,7 @@
       "hour": "21:15",
       "place": "Mendoza",
       "description": "Final entre Talleres y Boca Juniors",
-      "category": "Deporte",
+      "category": "Deportes",
       "image": "https://www.ole.com.ar/images/2023/10/11/z8SChssGR_1290x760__1.jpg",
       "tickets": 25000
     },
@@ -56,7 +56,7 @@
       "hour": "19:02",
       "place": "asdf",
       "description": "asdf",
-      "category": "Conferencia",
+      "category": "Conferencias",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJE0zl07Gax2eVz_ZSKQWMClcFDBOxCI6JjHVLJsSvhgplX9bAv3bAOiiy2fe24ub8IJU&usqp=CAU",
       "tickets": 123
     },
@@ -67,7 +67,7 @@
       "hour": "03:00",
       "place": "qweqe",
       "description": "qweq",
-      "category": "Concierto",
+      "category": "Conciertos",
       "image": "https://media.cnnchile.com/sites/2/2023/11/megadeth_square-e1699620218307.jpg",
       "tickets": 10000
     },
@@ -78,7 +78,7 @@
       "hour": "22:00",
       "place": "Monumental",
       "description": "Eras Tour",
-      "category": "Concierto",
+      "category": "Conciertos",
       "image": "https://cnnespanol.cnn.com/wp-content/uploads/2023/11/231110155523-taylor-swift-argentina-1109-restricted.jpg?quality=100&strip=info",
       "tickets": 19998
     }

@@ -21,17 +21,23 @@ body {
 
 .titulo {
     color: #fff;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
 }
 
 .subtitulo {
     color: #fff;
-    font-size: large;
+    font-size: medium;
     font-weight: light;
 }
 
-.buscador{
+.description {
+    color: #fff;
+    font-size: small;
+    font-weight: lighter;
+}
+
+.buscador {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,12 +46,14 @@ body {
     margin: 0 auto;
     padding: 10px;
     box-sizing: border-box;
+    height: 40px;
 }
 
 .buscador input {
     width: calc(100% - 20px);
     padding: 8px;
     box-sizing: border-box;
+    height: 40px;
 }
 
 .my-event-card {
@@ -77,6 +85,19 @@ h1 {
     margin: 0;
     padding-top: 9.5px;
     max-width: 100px;
+}
+
+#category {
+    width: calc(100% - 20px);
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: larger;
+    height: 40px;
+}
+
+.buscador,
+#category {
+    height: 40px;
 }
 
 app-footer {

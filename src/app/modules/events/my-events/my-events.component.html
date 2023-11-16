@@ -3,10 +3,17 @@
 
 <div class="buscador">
     <input type="text" name="filterPost" id="filterPost" placeholder="Buscar..." [(ngModel)]="filterPost">
+    <select name="catagory" id="category" [(ngModel)]="category">
+        <option value="">--</option>
+        <option value="Conciertos">Conciertos</option>
+        <option value="Deportes">Deportes</option>
+        <option value="Deatro">Teatro</option>
+        <option value="Conferencias">Conferencias</option>
+    </select>
 </div>
 <div class="container">    
     <div *ngFor="let ticket of myEvents" class="div1">
-        <div *ngFor="let event of events | filter: filterPost" class="div2">
+        <div *ngFor="let event of events | filter: filterPost || category" class="div2">
             <mat-card class="my-event-card" *ngIf="ticket.idEvent === event.id">
                 <img src={{event.image}}>
                 <mat-card-header class="header">
@@ -15,7 +22,7 @@
                     <mat-card-subtitle class="subtitulo">{{event.date}} - {{event.hour}}</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
-                <p>
+                <p class="description">
                     {{event.description}}
                 </p>
 

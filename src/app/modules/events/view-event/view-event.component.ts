@@ -17,8 +17,7 @@ export class ViewEventComponent implements OnInit{
   @Output() public eventToDelete: EventEmitter<number> = new EventEmitter();
   @Output() public eventToEdit: EventEmitter<Event> = new EventEmitter();
   @Output() public ticketToBuy: EventEmitter<Event> = new EventEmitter();
-
-  filterPost = '';
+  public filterPost: string = '';
   
   constructor(private authService: AuthService, private apiService: ApiService){}
 

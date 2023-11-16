@@ -13,7 +13,8 @@ export class MyEventsComponent implements OnInit{
   
   public myEvents: Array<Ticket> = [];
   public events: Array<Event> = [];
-  filterPost = '';
+  public filterPost: string = '';
+  public category: string='';
 
   constructor(private authService: AuthService, private apiService: ApiService){}
 

@@ -1,8 +1,4 @@
 body {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;*/
   background-color: #333333;
 }
 
@@ -117,5 +113,11 @@ button:disabled {
 
 .add {
   margin-top: 10px;
+}
+
+app-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
   
