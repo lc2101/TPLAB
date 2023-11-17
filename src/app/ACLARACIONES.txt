@@ -1,0 +1,10 @@
+Tenemos un video demostrando la funcionalidad del sitio. link: https://www.youtube.com/watch?v=5V3t0MzSrNc
+En la app se puede entrar como Administrador (email: admin@gmail.com, pw: admin123) o como Usuario.
+El administrador, puede agregar, editar o eliminar eventos.
+El usuario puede comprar como maximo 4 entradas por evento (en una compra o en varias).
+El usuario tiene el apartado de "Mi Perfil" en el cual puede modificar algunos de sus datos.
+El usuario tiene el apartado de "Mis Eventos" en el cual puede visualizar sus compras realizadas (si realizo dos o mas compras del mismo evento, aparecen como compras diferentes).
+En el registro de un usuario existen distintas validaciones, entre ellas, que no exista en la base de datos el email, el nombre de usuario ni el documento.
+Tambien existen distintas validaciones a la hora de crear un evento (por ejemplo, no se pueden crear dos eventos que tengan el mismo nombre y la misma fecha).
+Si no hay una sesion iniciada, no se puede ingresar al home ni a los apartados del usuario (auth guard).
+En el Home y en Mis Eventos, se pueden buscar eventos por nombre o por categoria.
