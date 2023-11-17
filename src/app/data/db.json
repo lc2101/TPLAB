@@ -90,7 +90,7 @@
       "description": "La ultima noche magica",
       "category": "Conciertos",
       "image": "https://cdn.getcrowder.com/images/decd0879-4a6f-415f-ab5b-86ceb38da48c-tbtour-mdq1920x720.png",
-      "tickets": 2000
+      "tickets": 1997
     },
     {
       "id": 6,
@@ -248,6 +248,12 @@
       "idUser": 5,
       "idEvent": 8,
       "ticketQ": 1
+    },
+    {
+      "id": 14,
+      "idUser": 2,
+      "idEvent": 5,
+      "ticketQ": 3
     }
   ]
 }
