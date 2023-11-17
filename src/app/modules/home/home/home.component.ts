@@ -129,4 +129,9 @@ export class HomeComponent {
   addEventTemplate() {
     this.addEventTemplateBoolean = true;
   }
+
+  public fechaActual(): string {
+    let fechaActual = new Date();
+    return fechaActual.toISOString().split('T')[0];
+  }
 }

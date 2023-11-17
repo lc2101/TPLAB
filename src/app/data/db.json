@@ -71,20 +71,9 @@
       "tickets": 123
     },
     {
-      "id": 3,
-      "name": "megadeth",
-      "date": "2024-05-22",
-      "hour": "03:00",
-      "place": "qweqe",
-      "description": "qweq",
-      "category": "Conciertos",
-      "image": "https://media.cnnchile.com/sites/2/2023/11/megadeth_square-e1699620218307.jpg",
-      "tickets": 10000
-    },
-    {
       "id": 4,
       "name": "Taylor Swift",
-      "date": "2023-11-17",
+      "date": "2023-11-18",
       "hour": "22:00",
       "place": "Monumental",
       "description": "Eras Tour",

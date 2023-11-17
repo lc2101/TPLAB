@@ -56,7 +56,7 @@
     <div class="container">
 
         <mat-card class="event-card" *ngFor="let event of events | filter: filterPost || category">
-            <div *ngIf="event.tickets > 0 && event.date > fechaActual()">
+            <div *ngIf="event.tickets > 0 && event.date >= fechaActual()">
                 <img src={{event.image}}>
                     <mat-card-header>
                         <mat-card-title class="titulo">{{event.name}}</mat-card-title>

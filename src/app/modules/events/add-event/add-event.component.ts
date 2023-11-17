@@ -50,4 +50,9 @@ export class AddEventComponent {
     return this.addEventForm.controls[field].errors && this.addEventForm.controls[field].touched;
   }
 
+  public fechaActual(): string {
+    let fechaActual = new Date();
+    return fechaActual.toISOString().split('T')[0];
+  }
+
 }
