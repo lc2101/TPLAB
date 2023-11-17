@@ -15,7 +15,7 @@ export class RegisterComponent {
 
   private dniPattern: RegExp = /^\d+$/; // solo permite numeros
 
-  private namePattern: RegExp = /^[A-Z][a-z]*(?:\s[A-Z][a-z]*)*$/; // solo letras
+  private namePattern: RegExp = /^[A-Z][a-z]*(?:\s[A-Z][a-z]*)*$/; // solo letras (primera letra de cada palabra en mayuscula)
 
   private passwordPattern: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]{6,}$/; //al menos una letra minuscula, una mayuscula y un numero. Permite caracteres especiales (opcional)
 

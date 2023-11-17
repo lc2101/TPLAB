@@ -119,7 +119,7 @@ export class HomeComponent {
   }
 
   public closeDialog(): void {
-    this.dialog.closeAll(); // Cierra todos los diálogos abiertos
+    this.dialog.closeAll();
   }
 
   public checkUser() {

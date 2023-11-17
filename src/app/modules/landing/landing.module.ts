@@ -3,14 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { LandingRoutingModule } from './landing-routing.module';
 import { LandingComponent } from './landing/landing.component';
-import { NosotrosComponent } from './nosotros/nosotros.component';
 import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    LandingComponent,
-    NosotrosComponent
+    LandingComponent
   ],
   imports: [
     CommonModule,
