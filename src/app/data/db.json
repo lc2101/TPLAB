@@ -45,6 +45,16 @@
       "birthDate": "1985-05-12",
       "name": "Mariano",
       "lastName": "Lopez"
+    },
+    {
+      "id": 6,
+      "userName": "nico06",
+      "email": "nic06@gmail.com",
+      "password": "Nico06",
+      "dni": "4216648616",
+      "birthDate": "2006-12-07",
+      "name": "Nicolas",
+      "lastName": "Aznar"
     }
   ],
   "events": [
@@ -90,7 +100,7 @@
       "description": "La ultima noche magica",
       "category": "Conciertos",
       "image": "https://cdn.getcrowder.com/images/decd0879-4a6f-415f-ab5b-86ceb38da48c-tbtour-mdq1920x720.png",
-      "tickets": 1997
+      "tickets": 1994
     },
     {
       "id": 6,
@@ -101,7 +111,7 @@
       "description": "Ricardo Darin y Andrea Pietra",
       "category": "Deatro",
       "image": "https://1.bp.blogspot.com/-4rvNANESffY/XYCQjGVS1NI/AAAAAAAARK8/ZCt5XP8_R78URpeFSiUgaYgXbcsNSV-4gCLcBGAsYHQ/s1600/TEATRO-MADRID-Escenas_de_la_vida_conyugal-TEATROS-DEL-CANAL-1-390x560.jpg",
-      "tickets": 500
+      "tickets": 498
     },
     {
       "id": 7,
@@ -112,12 +122,12 @@
       "description": "Partido amistoso Copa San Juan",
       "category": "Deportes",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeCGReomfLw47p9YwqT1xFngeZbju_hv6rIA&usqp=CAU",
-      "tickets": 10000
+      "tickets": 9996
     },
     {
       "id": 8,
       "name": "Casados con Hijos",
-      "date": "2024-01-15",
+      "date": "2024-03-15",
       "hour": "22:00",
       "place": "Teatro Roxy",
       "description": "Los Argento en el Teatro",
@@ -133,13 +143,13 @@
       "place": "Teatro Colon",
       "description": "Opera clasica de Murger y Barriere",
       "category": "Deatro",
-      "image": "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/10/10152642/La-Boheme-2018-General-7.jpg",
+      "image": "https://lh3.googleusercontent.com/proxy/FP_vp6ok9LwG8LUuEa5qQrNd32TO-yWHx5N0xhP9toJe-0-ya0RUxD2ZGxMUI_O74OYTA3BEMdR7elgiyIX3DLZn4kHDBRnaSxL6kTekmafp2_PKemQ799p-KKk",
       "tickets": 4000
     },
     {
       "id": 10,
       "name": "Charla Ted con Gabriel Batistuta",
-      "date": "2023-12-15",
+      "date": "2024-12-15",
       "hour": "18:00",
       "place": "Movistar Arena",
       "description": "El futbol y la superacion",
@@ -161,7 +171,7 @@
     {
       "id": 12,
       "name": "La Matematica con Paenza",
-      "date": "2023-12-07",
+      "date": "2024-12-07",
       "hour": "17:00",
       "place": "Facultad Ciencias Exactas",
       "description": "Evaluacion de la Matematica actual y del futuro",
@@ -253,6 +263,30 @@
       "id": 14,
       "idUser": 2,
       "idEvent": 5,
+      "ticketQ": 3
+    },
+    {
+      "id": 15,
+      "idUser": 6,
+      "idEvent": 5,
+      "ticketQ": 3
+    },
+    {
+      "id": 16,
+      "idUser": 6,
+      "idEvent": 7,
+      "ticketQ": 1
+    },
+    {
+      "id": 17,
+      "idUser": 6,
+      "idEvent": 6,
+      "ticketQ": 2
+    },
+    {
+      "id": 18,
+      "idUser": 5,
+      "idEvent": 7,
       "ticketQ": 3
     }
   ]
